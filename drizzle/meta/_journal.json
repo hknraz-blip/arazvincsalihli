@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1761816410698,
+      "tag": "0000_red_anita_blake",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1761816459669,
+      "tag": "0001_flippant_mephisto",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1761991295174,
+      "tag": "0002_opposite_luminals",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1762160584462,
+      "tag": "0003_acoustic_warbird",
+      "breakpoints": true
+    }
+  ]
+}

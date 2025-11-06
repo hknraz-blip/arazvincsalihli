@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Arama motorlarına site haritasının adresini bildir
+Sitemap: https://www.arazvincsalihli.com/sitemap.xml

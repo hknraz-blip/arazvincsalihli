@@ -42,8 +42,3 @@ export default defineConfig({
     },
   },
 });
-build: {
-  minify: 'terser',
-  sourcemap: false,
-  cssCodeSplit: true,
-}

@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: arazvincsalihli
+    env: node
+    buildCommand: pnpm run build
+    startCommand: pnpm start
+    staticPublishPath: dist
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable

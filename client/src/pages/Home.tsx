@@ -193,7 +193,7 @@ export default function Home() {
               <div className="text-orange-100">Müşteri Memnuniyeti</div>
             </div>
             <div className="text-center text-white">
-              <div className="text-4xl font-bold mb-2">15+</div>
+              <div className="text-4xl font-bold mb-2">25+</div>
               <div className="text-orange-100">Yıl Deneyim</div>
             </div>
             <div className="text-center text-white">
@@ -343,7 +343,7 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="p-4 bg-orange-50 rounded-xl border border-orange-100">
-                  <div className="text-3xl font-bold text-orange-600 mb-2">15+</div>
+                  <div className="text-3xl font-bold text-orange-600 mb-2">25+</div>
                   <div className="text-gray-600 font-medium">Yıl Deneyim</div>
                 </div>
                 <div className="p-4 bg-orange-50 rounded-xl border border-orange-100">

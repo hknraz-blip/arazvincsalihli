@@ -2,11 +2,9 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Instagram, Construction, Shield, Clock, Award, Truck, CheckCircle, Star, ArrowRight, ChevronDown } from "lucide-react";
-import { useState, useEffect } from "react";
 
 export default function Home() {
   const { user, loading, error, isAuthenticated, logout } = useAuth();
-  const [scrollY, setScrollY] = useState(0);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -72,12 +70,6 @@ export default function Home() {
       },
     ],
   };
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

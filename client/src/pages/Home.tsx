@@ -8,6 +8,71 @@ export default function Home() {
   const { user, loading, error, isAuthenticated, logout } = useAuth();
   const [scrollY, setScrollY] = useState(0);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        name: "Araz Vinç Salihli",
+        description:
+          "Salihli ve Manisa'da 55 tonluk Hiab ve 25m sepetli vinç kiralama, güvenli taşıma ve 7/24 profesyonel hizmet.",
+        image: "https://arazvincsalihli.com/araz-vinc-machine.jpg",
+        url: "https://arazvincsalihli.com/",
+        telephone: "+905444513341",
+        areaServed: "Manisa, Türkiye",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Abay Bulvarı No: 72",
+          addressLocality: "Salihli",
+          addressRegion: "Manisa",
+          addressCountry: "TR",
+        },
+        openingHours: "Mo-Su 00:00-23:59",
+        sameAs: [
+          "https://instagram.com/arazvincsalihli",
+          "https://maps.google.com/?q=Abay+Bulvar%C4%B1+No:+72+Salihli+Manisa",
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Araz Vinç hangi bölgelerde hizmet veriyor?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Salihli ve Manisa bölgesinde hizmet veriyoruz. Acil durumlarda çevresindeki bölgelere de gidebiliriz.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Vinç kiralama fiyatları nasıl belirleniyor?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Fiyatlandırma, vinç türü, çalışma süresi, mesafe ve proje türüne göre belirlenir. Ücretsiz teklif almak için bize ulaşabilirsiniz.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Acil durumlarda ne kadar sürede hizmet alabilir?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "7/24 hizmet sunuyoruz. Acil durumlarda genellikle 30 dakika içinde olay yerine ulaşabiliyoruz.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Operatörleriniz sertifikalı mı?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Evet, tüm operatörlerimiz sertifikalı ve deneyimlidir. Güvenlik standartlarına uygun şekilde çalışırız.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
@@ -21,6 +86,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300">
         <div className="container mx-auto px-4">
@@ -35,6 +104,9 @@ export default function Home() {
               </button>
               <button onClick={() => scrollToSection("hizmetler")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
                 Hizmetlerimiz
+              </button>
+              <button onClick={() => scrollToSection("calismalar")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+                Çalışmalarımız
               </button>
               <button onClick={() => scrollToSection("hakkimizda")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
                 Hakkımızda
@@ -166,6 +238,81 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Works Section */}
+      <section id="calismalar" className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Çalışmalarımız</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Tamamladığımız projelerden bazı örnekler ve operasyon detaylarımız
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Sanayi Tesis Montajı",
+                location: "Turgutlu / Manisa",
+                desc: "50 tonluk vinç ile üretim hattı ekipmanlarının montajı ve yerleştirilmesi",
+                detail: "2 gün · 6 operatör",
+              },
+              {
+                title: "Köprü Kiriş Taşıma",
+                location: "Salihli / Manisa",
+                desc: "Ağır kirişlerin gece operasyonu ile güvenli taşıma ve montajı",
+                detail: "35 ton · 24 saat",
+              },
+              {
+                title: "Fabrika Makine Nakliyesi",
+                location: "Alaşehir / Manisa",
+                desc: "Hassas ekipmanların sökümü, taşınması ve yeniden kurulumu",
+                detail: "20 km · 3 araç",
+              },
+              {
+                title: "Şantiye Vinç Desteği",
+                location: "Gölmarmara / Manisa",
+                desc: "Kule montajı ve yüksek kat malzeme taşıma operasyonu",
+                detail: "7/24 vardiya",
+              },
+              {
+                title: "Yüksekten Erişim Çalışması",
+                location: "Köprübaşı / Manisa",
+                desc: "Bakım-onarım için platform kurulumu ve güvenli erişim desteği",
+                detail: "30 m erişim",
+              },
+              {
+                title: "Modüler Ev Taşıma",
+                location: "Akhisar / Manisa",
+                desc: "Prefabrik yapıların demontajı ve yeni lokasyona teslimi",
+                detail: "1 günde teslim",
+              },
+            ].map((work, idx) => (
+              <div
+                key={idx}
+                className="group relative overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-orange-50 to-white"
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#fed7aa,transparent_35%)] opacity-40 group-hover:opacity-70 transition-opacity" />
+                <div className="relative p-8 space-y-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/80 border border-orange-100 text-orange-700 rounded-full text-sm font-semibold">
+                    <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                    {work.location}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-orange-700 transition-colors">{work.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{work.desc}</p>
+                  <div className="flex items-center justify-between pt-2 text-sm font-semibold text-orange-700">
+                    <span>{work.detail}</span>
+                    <span className="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 text-orange-700 rounded-full">
+                      <ArrowRight className="h-4 w-4" />
+                      Detay
+                    </span>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -366,6 +513,7 @@ export default function Home() {
               <h4 className="font-bold mb-4 text-white">Hızlı Linkler</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><button onClick={() => scrollToSection("hizmetler")} className="hover:text-orange-400 transition-colors">Hizmetlerimiz</button></li>
+                <li><button onClick={() => scrollToSection("calismalar")} className="hover:text-orange-400 transition-colors">Çalışmalarımız</button></li>
                 <li><button onClick={() => scrollToSection("hakkimizda")} className="hover:text-orange-400 transition-colors">Hakkımızda</button></li>
                 <li><button onClick={() => scrollToSection("iletisim")} className="hover:text-orange-400 transition-colors">İletişim</button></li>
               </ul>

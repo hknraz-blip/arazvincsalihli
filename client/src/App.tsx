@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import FileManager from "./pages/FileManager";
+import AdminMediaPanel from "./pages/AdminMediaPanel";
 import ServiceMobilCrane from "./pages/ServiceMobilCrane";
 import ServiceSafeTransport from "./pages/ServiceSafeTransport";
 import Service24_7 from "./pages/Service24_7";
@@ -17,6 +18,7 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/admin/media"} component={AdminMediaPanel} />
       <Route path={"/files"} component={FileManager} />
       <Route path={"/service/mobile-crane"} component={ServiceMobilCrane} />
       <Route path={"/service/safe-transport"} component={ServiceSafeTransport} />

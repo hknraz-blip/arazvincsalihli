@@ -2,9 +2,8 @@ services:
   - type: web
     name: arazvincsalihli
     env: node
-    buildCommand: pnpm run build
+    buildCommand: pnpm install --no-frozen-lockfile && pnpm run build
     startCommand: pnpm start
-    staticPublishPath: dist
     headers:
       - path: /*
         name: Cache-Control

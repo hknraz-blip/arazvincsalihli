@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 
-# Arama motorlarına site haritasının adresini bildir
-Sitemap: https://www.arazvincsalihli.com/sitemap.xml
+# Yönetim / API sayfalarını engelle
+Disallow: /files
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap konumu
+Sitemap: https://arazvincsalihli.com/sitemap.xml

@@ -282,21 +282,15 @@ export default function Home() {
               { icon: Construction, title: "\u0130n\u015faat Projeleri", desc: "\u0130n\u015faat sahalarında malzeme ta\u015fıma, montaj ve demontaj i\u015flemleriniz i\u00e7in \u00f6zel \u00e7\u00f6z\u00fcmler sunuyoruz.", path: "/service/construction" },
               { icon: Truck, title: "Sanayi Ta\u015fımacılı\u011fı", desc: "A\u011fır sanayi ekipmanlarının ta\u015fınması ve yerle\u015ftirilmesi i\u00e7in profesyonel vin\u00e7 hizmetleri.", path: "/service/industrial" },
             ].map((service, idx) => (
-              <a key={idx} href={service.path} className="group">
-                <Card className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 h-full cursor-pointer">
-                  <CardContent className="p-8">
-                    <div className="h-14 w-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-200 transition-colors">
-                      <service.icon className="h-7 w-7 text-orange-600" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">{service.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{service.desc}</p>
-                    <div className="mt-4 flex items-center text-orange-600 font-semibold group-hover:gap-2 transition-all">
-                      <span>Detayları Gör</span>
-                      <span className="ml-2">→</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </a>
+              <Card key={idx} className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 h-full">
+                <CardContent className="p-8">
+                  <div className="h-14 w-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center mb-6">
+                    <service.icon className="h-7 w-7 text-orange-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.desc}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -509,7 +503,7 @@ export default function Home() {
                       <Star key={i} className="h-5 w-5 fill-orange-400 text-orange-400" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-6 leading-relaxed italic">\"{ testimonial.text}\"</p>
+                  <p className="text-gray-600 mb-6 leading-relaxed italic">"{testimonial.text}"</p>
                   <div>
                     <div className="font-bold text-gray-900">{testimonial.name}</div>
                     <div className="text-sm text-gray-500">{testimonial.company}</div>

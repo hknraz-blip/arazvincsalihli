@@ -1,12 +1,71 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, Instagram, Construction, Shield, Clock, Award, Truck, CheckCircle, Star, ArrowRight, ChevronDown } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Phone, MapPin, Instagram, Construction, Shield, Clock, Award, Truck, CheckCircle, Star, ArrowRight, ChevronDown, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function Home() {
   const { user, loading, error, isAuthenticated, logout } = useAuth();
   const [scrollY, setScrollY] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [activeFilter, setActiveFilter] = useState("Tümü");
+
+  const galleryItems = [
+    { src: "/galeri/proje-01.jpg", title: "Sanayi Ekipmanı Taşıma", category: "Sanayi", desc: "Ağır sanayi ekipmanının Hiab vinç ile güvenli taşınması" },
+    { src: "/galeri/proje-02.jpg", title: "Trafo Montajı", category: "Sanayi", desc: "İnşaat sahasında trafo kabininin yerleştirilmesi" },
+    { src: "/galeri/proje-03.jpg", title: "Tünel İnşaatı", category: "İnşaat", desc: "Tünel projesinde kalıp montajı ve kaldırma operasyonu" },
+    { src: "/galeri/proje-04.jpg", title: "Jeneratör Yerleştirme", category: "Sanayi", desc: "İnşaat sahasında büyük jeneratör montajı" },
+    { src: "/galeri/proje-05.jpg", title: "Trafo Kabini Kurulumu", category: "Sanayi", desc: "Trafo kabininin hassas yerleştirme işlemi" },
+    { src: "/galeri/proje-06.jpg", title: "Yüksek Bina Operasyonu", category: "Hiab Vinç", desc: "Çok katlı binada yük kaldırma operasyonu" },
+    { src: "/galeri/proje-07.jpg", title: "Araç Kurtarma", category: "Acil Hizmet", desc: "Devrilmiş araç kurtarma ve tahliye operasyonu" },
+    { src: "/galeri/proje-08.jpg", title: "Yol Kazası Müdahale", category: "Acil Hizmet", desc: "Karayolunda devrilmiş araç kurtarma çalışması" },
+    { src: "/galeri/proje-09.jpg", title: "Depo Tankı Yerleştirme", category: "Sanayi", desc: "Büyük depo tankının zemine yerleştirilmesi" },
+    { src: "/galeri/proje-10.jpg", title: "Tank Kaldırma Operasyonu", category: "Sanayi", desc: "Ağır depo tankı kaldırma ve konumlama işlemi" },
+    { src: "/galeri/proje-11.jpg", title: "Arazi Kurtarma", category: "Acil Hizmet", desc: "Ormanlık arazide sıkışan iş makinesi kurtarma" },
+    { src: "/galeri/proje-12.jpg", title: "Çelik Konstrüksiyon", category: "İnşaat", desc: "Fabrika inşaatında çelik konstrüksiyon montajı" },
+    { src: "/galeri/proje-13.jpg", title: "Çelik Kolon Dikimi", category: "İnşaat", desc: "İnşaat sahasında çelik kolon yerleştirme işlemi" },
+    { src: "/galeri/proje-14.jpg", title: "Tünel Kurtarma", category: "Acil Hizmet", desc: "Tünel içinde devrilmiş araç kurtarma operasyonu" },
+    { src: "/galeri/proje-15.jpg", title: "Tünel Çalışması", category: "İnşaat", desc: "Tünel inşaatında vinç ile destek hizmetleri" },
+    { src: "/galeri/proje-16.jpg", title: "İş Makinesi Kurtarma", category: "Acil Hizmet", desc: "Ormanlık arazide sıkışan iş makinelerinin kurtarılması" },
+    { src: "/galeri/proje-17.jpg", title: "Köprü Kalıbı Montajı", category: "İnşaat", desc: "Tünel girişinde köprü kalıbı kaldırma operasyonu" },
+    { src: "/galeri/proje-18.jpg", title: "TIR Kurtarma", category: "Acil Hizmet", desc: "Karayolunda devrilmiş TIR kurtarma çalışması" },
+    { src: "/galeri/proje-19.jpg", title: "Hastane Yüksek Operasyon", category: "Hiab Vinç", desc: "Hastane binasında yüksek katlı vinç operasyonu" },
+    { src: "/galeri/proje-20.jpg", title: "Jeneratör Taşıma", category: "Sanayi", desc: "Büyük jeneratörün araçtan indirilme işlemi" },
+  ];
+
+  const categories = ["Tümü", "Hiab Vinç", "İnşaat", "Sanayi", "Acil Hizmet"];
+  const filteredItems = activeFilter === "Tümü" ? galleryItems : galleryItems.filter(i => i.category === activeFilter);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeLightbox = useCallback(() => {
+    setLightboxOpen(false);
+    document.body.style.overflow = "";
+  }, []);
+
+  const prevImage = useCallback(() => {
+    setLightboxIndex(i => (i - 1 + filteredItems.length) % filteredItems.length);
+  }, [filteredItems.length]);
+
+  const nextImage = useCallback(() => {
+    setLightboxIndex(i => (i + 1) % filteredItems.length);
+  }, [filteredItems.length]);
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight") nextImage();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [lightboxOpen, closeLightbox, prevImage, nextImage]);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -244,6 +303,143 @@ export default function Home() {
       </section>
 
      
+
+     
+
+      {/* === ÇALIŞMALARIMIZ GALERİ BÖLÜMÜ === */}
+      <section id="calismalar" className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full">
+              <span className="text-orange-700 text-sm font-semibold">Projelerimiz</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Çalışmalarımız</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Salihli ve Manisa genelinde gerçekleştirdiğimiz başarılı projelerden kareler
+            </p>
+          </div>
+
+          {/* Filtre Butonları */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActiveFilter(cat)}
+                className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
+                  activeFilter === cat
+                    ? "bg-gradient-to-r from-orange-600 to-orange-700 text-white shadow-lg shadow-orange-200 scale-105"
+                    : "bg-gray-100 text-gray-600 hover:bg-orange-50 hover:text-orange-600"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Fotoğraf Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredItems.map((item, idx) => (
+              <div
+                key={idx}
+                className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer aspect-[4/3]"
+                onClick={() => openLightbox(idx)}
+              >
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <span className="inline-block px-3 py-1 bg-orange-600 text-white text-xs font-semibold rounded-full mb-2">
+                          {item.category}
+                        </span>
+                        <h3 className="text-white font-bold text-lg leading-tight">{item.title}</h3>
+                        <p className="text-gray-300 text-sm mt-1">{item.desc}</p>
+                      </div>
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 ml-3 flex-shrink-0">
+                        <ZoomIn className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Kategori badge (her zaman görünür) */}
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 bg-black/40 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+                    {item.category}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-14">
+            <p className="text-gray-500 mb-4">Projeniz için ücretsiz keşif ve fiyat teklifi alın</p>
+            <a href="tel:05444513341">
+              <Button size="lg" className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white shadow-lg shadow-orange-200">
+                <Phone className="h-5 w-5 mr-2" />
+                Teklif Alın
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* === LIGHTBOX === */}
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          {/* Kapat */}
+          <button
+            className="absolute top-5 right-5 bg-white/10 hover:bg-white/25 backdrop-blur-sm rounded-full p-3 text-white transition-all z-10"
+            onClick={closeLightbox}
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          {/* Sol ok */}
+          <button
+            className="absolute left-5 bg-white/10 hover:bg-white/25 backdrop-blur-sm rounded-full p-3 text-white transition-all z-10"
+            onClick={e => { e.stopPropagation(); prevImage(); }}
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+
+          {/* Sağ ok */}
+          <button
+            className="absolute right-5 bg-white/10 hover:bg-white/25 backdrop-blur-sm rounded-full p-3 text-white transition-all z-10"
+            onClick={e => { e.stopPropagation(); nextImage(); }}
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          {/* Görsel */}
+          <div
+            className="relative max-w-5xl max-h-[85vh] mx-16 flex flex-col items-center"
+            onClick={e => e.stopPropagation()}
+          >
+            <img
+              src={filteredItems[lightboxIndex].src}
+              alt={filteredItems[lightboxIndex].title}
+              className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl"
+            />
+            <div className="mt-4 text-center">
+              <span className="inline-block px-3 py-1 bg-orange-600 text-white text-xs font-semibold rounded-full mb-2">
+                {filteredItems[lightboxIndex].category}
+              </span>
+              <h3 className="text-white font-bold text-xl">{filteredItems[lightboxIndex].title}</h3>
+              <p className="text-gray-400 text-sm mt-1">{filteredItems[lightboxIndex].desc}</p>
+              <p className="text-gray-500 text-xs mt-3">{lightboxIndex + 1} / {filteredItems.length}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* About Section */}
       <section id="hakkimizda" className="py-24 bg-white">

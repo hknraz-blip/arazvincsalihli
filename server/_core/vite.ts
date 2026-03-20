@@ -32,7 +32,6 @@ export async function setupVite(app: Express, server: Server) {
         "index.html"
       );
 
-      // always reload the index.html file from disk incase it changes
       let template = await fs.promises.readFile(clientTemplate, "utf-8");
       template = template.replace(
         `src="/src/main.tsx"`,
@@ -48,24 +47,16 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  // Try multiple possible dist paths
-  const possiblePaths = [
-    path.resolve(import.meta.dirname, "..", "..", "dist"),
-    path.resolve(import.meta.dirname, "public"),
-    path.resolve(process.cwd(), "dist"),
-  ];
+  // Server (dist/index.js) ve frontend (dist/index.html) aynı klasörde
+  const distPath = path.resolve(import.meta.dirname);
 
-  const distPath = possiblePaths.find(p => fs.existsSync(p) && fs.existsSync(path.join(p, "index.html"))) || possiblePaths[0];
-
-  console.log(`[serveStatic] Using dist path: ${distPath}`);
+  console.log(`[serveStatic] dirname: ${import.meta.dirname}`);
+  console.log(`[serveStatic] distPath: ${distPath}`);
   console.log(`[serveStatic] index.html exists: ${fs.existsSync(path.join(distPath, "index.html"))}`);
 
   app.use(express.static(distPath));
 
-  // fall through to index.html if the file doesn't exist (SPA routing)
   app.use("*", (_req, res) => {
-    const indexPath = path.resolve(distPath, "index.html");
-    console.log(`[serveStatic] Serving index.html from: ${indexPath}`);
-    res.sendFile(indexPath);
+    res.sendFile(path.resolve(distPath, "index.html"));
   });
 }

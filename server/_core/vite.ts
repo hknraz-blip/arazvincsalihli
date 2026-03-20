@@ -48,18 +48,24 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(import.meta.dirname, "..", "..", "dist");
+  // Try multiple possible dist paths
+  const possiblePaths = [
+    path.resolve(import.meta.dirname, "..", "..", "dist"),
+    path.resolve(import.meta.dirname, "public"),
+    path.resolve(process.cwd(), "dist"),
+  ];
 
-  if (!fs.existsSync(distPath)) {
-    console.error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`
-    );
-  }
+  const distPath = possiblePaths.find(p => fs.existsSync(p) && fs.existsSync(path.join(p, "index.html"))) || possiblePaths[0];
+
+  console.log(`[serveStatic] Using dist path: ${distPath}`);
+  console.log(`[serveStatic] index.html exists: ${fs.existsSync(path.join(distPath, "index.html"))}`);
 
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist (SPA routing)
   app.use("*", (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
+    const indexPath = path.resolve(distPath, "index.html");
+    console.log(`[serveStatic] Serving index.html from: ${indexPath}`);
+    res.sendFile(indexPath);
   });
 }

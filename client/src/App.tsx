@@ -11,6 +11,10 @@ import ServiceSafeTransport from "./pages/ServiceSafeTransport";
 import Service24_7 from "./pages/Service24_7";
 import ServiceConstruction from "./pages/ServiceConstruction";
 import ServiceIndustrial from "./pages/ServiceIndustrial";
+import Blog from "./pages/Blog";
+import BlogSalihliVincKiralama from "./pages/BlogSalihliVincKiralama";
+import BlogHiabVincNedir from "./pages/BlogHiabVincNedir";
+import BlogAgirYukTasimaGuvenlik from "./pages/BlogAgirYukTasimaGuvenlik";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -23,6 +27,10 @@ function Router() {
       <Route path={"/service/24-7"} component={Service24_7} />
       <Route path={"/service/construction"} component={ServiceConstruction} />
       <Route path={"/service/industrial"} component={ServiceIndustrial} />
+      <Route path={"/blog"} component={Blog} />
+      <Route path={"/blog/salihli-vinc-kiralama"} component={BlogSalihliVincKiralama} />
+      <Route path={"/blog/hiab-vinc-nedir"} component={BlogHiabVincNedir} />
+      <Route path={"/blog/agir-yuk-tasima-guvenlik"} component={BlogAgirYukTasimaGuvenlik} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

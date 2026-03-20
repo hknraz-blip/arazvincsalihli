@@ -174,6 +174,9 @@ export default function Home() {
               <button onClick={() => scrollToSection("iletisim")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
                 İletişim
               </button>
+              <a href="/blog" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
+                Blog
+              </a>
             </div>
             <a href="tel:05444513341" className="hidden md:block">
               <Button className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white shadow-lg">
@@ -634,6 +637,7 @@ export default function Home() {
                 <li><button onClick={() => scrollToSection("calismalar")} className="hover:text-orange-400 transition-colors">Çalışmalarımız</button></li>
                 <li><button onClick={() => scrollToSection("hakkimizda")} className="hover:text-orange-400 transition-colors">Hakkımızda</button></li>
                 <li><button onClick={() => scrollToSection("iletisim")} className="hover:text-orange-400 transition-colors">İletişim</button></li>
+                <li><a href="/blog" className="hover:text-orange-400 transition-colors">Blog</a></li>
               </ul>
             </div>
             <div>

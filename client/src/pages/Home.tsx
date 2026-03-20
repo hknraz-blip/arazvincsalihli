@@ -68,70 +68,7 @@ export default function Home() {
     return () => window.removeEventListener("keydown", handler);
   }, [lightboxOpen, closeLightbox, prevImage, nextImage]);
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        name: "Araz Vinç Salihli",
-        description:
-          "Salihli ve Manisa'da 55 tonluk Hiab ve 25m sepetli vinç kiralama, güvenli taşıma ve 7/24 profesyonel hizmet.",
-        image: "https://arazvincsalihli.com/araz-vinc-machine.jpg",
-        url: "https://arazvincsalihli.com/",
-        telephone: "+905444513341",
-        areaServed: "Manisa, Türkiye",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Abay Bulvarı No: 72",
-          addressLocality: "Salihli",
-          addressRegion: "Manisa",
-          addressCountry: "TR",
-        },
-        openingHours: "Mo-Su 00:00-23:59",
-        sameAs: [
-          "https://instagram.com/arazvincsalihli",
-          "https://maps.google.com/?q=Abay+Bulvar%C4%B1+No:+72+Salihli+Manisa",
-        ],
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "Araz Vinç hangi bölgelerde hizmet veriyor?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Salihli ve Manisa bölgesinde hizmet veriyoruz. Acil durumlarda çevresindeki bölgelere de gidebiliriz.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Vinç kiralama fiyatları nasıl belirleniyor?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Fiyatlandırma, vinç türü, çalışma süresi, mesafe ve proje türüne göre belirlenir. Ücretsiz teklif almak için bize ulaşabilirsiniz.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Acil durumlarda ne kadar sürede hizmet alabilir?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "7/24 hizmet sunuyoruz. Acil durumlarda genellikle 30 dakika içinde olay yerine ulaşabiliyoruz.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Operatörleriniz sertifikalı mı?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Evet, tüm operatörlerimiz sertifikalı ve deneyimlidir. Güvenlik standartlarına uygun şekilde çalışırız.",
-            },
-          },
-        ],
-      },
-    ],
-  };
+  // Structured data index.html'de tanımlı, burada tekrar tanımlamaya gerek yok
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -146,10 +83,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300">
         <div className="container mx-auto px-4">

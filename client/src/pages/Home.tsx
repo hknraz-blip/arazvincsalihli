@@ -32,6 +32,7 @@ export default function Home() {
     { src: "/galeri/tunel-makina-montaji-2.jpg",      title: "Tünel Ekipman Yerleştirme",      category: "İnşaat",       desc: "Tünel projesinde ağır makina konumlama operasyonu" },
     { src: "/galeri/tunel-beton-mikseri-1.jpg",       title: "Tünelde Beton Mikseri Kurtarma", category: "Acil Hizmet",  desc: "Tünel içinde devrilmiş beton mikserinin kurtarılması" },
     { src: "/galeri/tunel-beton-mikseri-2.jpg",       title: "Tünel İçi Kurtarma",             category: "Acil Hizmet",  desc: "Tünel içindeki araç kurtarma ve tahliye operasyonu" },
+    { src: "/galeri/prefabrik-beton-kosk.jpeg",       title: "Prefabrik Beton Köşk Montajı",   category: "Sanayi",       desc: "Prefabrik beton köşkün vinç ile montaj ve yerleştirme operasyonu" },
   ];
 
   const categories = ["Tümü", "Hiab Vinç", "İnşaat", "Sanayi", "Acil Hizmet"];

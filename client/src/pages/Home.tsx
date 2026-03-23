@@ -88,7 +88,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-24 w-auto object-contain" />
+              <img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-25 w-auto object-contain" />
             </div>
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection("anasayfa")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
@@ -138,7 +138,7 @@ export default function Home() {
                 Güvenilir <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">Vinç</span> Kiralama
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Salihli ve Manisa bölgesinde 24/7 profesyonel vinç kiralama hizmetleri. Deneyimli ekibimiz ve modern ekipmanlarımızla her türlü yükleme ve taşıma ihtiyacınıza çözüm sunuyoruz.
+                Salihli, Alaşehir, Kula ve Demirci bölgesinde 24/7 profesyonel vinç kiralama hizmetleri. Deneyimli ekibimiz ve modern ekipmanlarımızla her türlü yükleme ve taşıma ihtiyacınıza çözüm sunuyoruz.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href="tel:05444513341">
@@ -245,7 +245,7 @@ export default function Home() {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Çalışmalarımız</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Salihli ve Manisa genelinde gerçekleştirdiğimiz başarılı projelerden kareler
+              Salihli, Alaşehir, Kula ve Demirci genelinde gerçekleştirdiğimiz başarılı projelerden kareler
             </p>
           </div>
 
@@ -389,7 +389,7 @@ export default function Home() {
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Deneyim ve Güvenilirlik</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Araz Vinç olarak Salihli ve Manisa bölgesinde yıllardır profesyonel vinç kiralama hizmetleri sunmaktayız. Müşteri memnuniyetini ön planda tutarak, güvenli ve hızlı çözümler üretiyoruz.
+                Araz Vinç olarak Salihli, Alaşehir, Kula ve Demirci bölgesinde yıllardır profesyonel vinç kiralama hizmetleri sunmaktayız. Müşteri memnuniyetini ön planda tutarak, güvenli ve hızlı çözümler üretiyoruz.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Modern vinç filomuz ve deneyimli ekibimizle her türlü yükleme, indirme ve taşıma işlemlerinizi en yüksek güvenlik standartlarında gerçekleştiriyoruz. İnşaat, sanayi ve ticari projelerinizde güvenilir iş ortağınız olmaktan gurur duyuyoruz.
@@ -463,7 +463,7 @@ export default function Home() {
 
           <div className="max-w-3xl mx-auto space-y-4">
             {[
-              { q: "Araz Vinç hangi bölgelerde hizmet veriyor?", a: "Salihli ve Manisa bölgesinde hizmet veriyoruz. Acil durumlarda çevresindeki bölgelere de gidebiliriz." },
+              { q: "Araz Vinç hangi bölgelerde hizmet veriyor?", a: "Salihli, Alaşehir, Kula, Demirci ve çevre ilçelerde hizmet veriyoruz. Acil durumlarda daha geniş bölgelere de ulaşabiliriz." },
               { q: "Vinç kiralama fiyatları nasıl belirleniyor?", a: "Fiyatlandırma, vinç türü, çalışma süresi, mesafe ve proje türüne göre belirlenir. Ücretsiz teklif almak için bize ulaşabilirsiniz." },
               { q: "Acil durumlarda ne kadar sürede hizmet alabilir?", a: "7/24 hizmet sunuyoruz. Acil durumlarda genellikle 30 dakika içinde olay yerine ulaşabiliyoruz." },
               { q: "Operatörleriniz sertifikalı mı?", a: "Evet, tüm operatörlerimiz sertifikalı ve deneyimlidir. Güvenlik standartlarına uygun şekilde çalışırız." },

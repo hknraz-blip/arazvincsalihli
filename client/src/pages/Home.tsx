@@ -557,7 +557,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-16 w-auto object-contain" style={{mixBlendMode: "screen"}} />
+                <img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-16 w-auto object-contain" />
               </div>
               <p className="text-gray-400">Profesyonel vinç kiralama hizmetleri</p>
             </div>

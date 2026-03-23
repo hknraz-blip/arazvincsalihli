@@ -88,8 +88,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <img src="/araz-vinc-logo.png" alt="Araz Vin\u00e7" className="h-12 w-12 object-contain" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Araz Vinç</span>
+              <img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-16 w-auto object-contain" />
             </div>
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection("anasayfa")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">
@@ -558,8 +557,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src="/araz-vinc-logo.png" alt="Araz Vin\u00e7" className="h-10 w-10 object-contain" />
-                <span className="text-2xl font-bold">Araz Vinç</span>
+                <img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-16 w-auto object-contain" />
               </div>
               <p className="text-gray-400">Profesyonel vinç kiralama hizmetleri</p>
             </div>

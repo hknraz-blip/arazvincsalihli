@@ -86,9 +86,9 @@ export default function Home() {
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300">
         <div className="container mx-auto px-4">
-          <nav className="flex items-center justify-between h-16">
+          <nav className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-16 w-auto object-contain" />
+              <img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-20 w-auto object-contain" />
             </div>
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection("anasayfa")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">

@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Phone, Mail, MapPin } from "lucide-react";
+
+// Google Ads dönüşüm fonksiyonu için global tip tanımı
+declare function gtagSendEvent(url: string): false;
 
 export default function QuoteForm() {
   const [formData, setFormData] = useState({
@@ -41,6 +44,9 @@ export default function QuoteForm() {
       console.log("Form submitted:", formData);
       
       toast.success("Teklif talebiniz alındı! En kısa sürede sizinle iletişime geçeceğiz.");
+
+      // Google Ads dönüşüm olayını tetikle
+      gtagSendEvent(window.location.href);
       
       // Reset form
       setFormData({

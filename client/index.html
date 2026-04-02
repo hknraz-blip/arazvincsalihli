@@ -49,6 +49,22 @@
     gtag('config', 'G-SW9L5X53FX');
   </script>
 
+  <!-- ===================== GOOGLE ADS CONVERSION TRACKING ===================== -->
+  <script>
+    function gtagSendEvent(url) {
+      var callback = function () {
+        if (typeof url === 'string') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion_event_contact', {
+        'event_callback': callback,
+        'event_timeout': 2000,
+      });
+      return false;
+    }
+  </script>
+
   <!-- ===================== SCHEMA.ORG (Zengin Google Sonuçları) ===================== -->
   <script type="application/ld+json">
   {

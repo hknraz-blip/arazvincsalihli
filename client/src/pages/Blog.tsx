@@ -5,6 +5,22 @@ import { useLocation } from "wouter";
 
 const blogPosts = [
   {
+    slug: "vinc-operasyonunda-hava-kosullari",
+    title: "Vinç Operasyonlarında Hava Koşullarının Önemi",
+    excerpt: "Rüzgar, yağmur, sis ve don gibi hava koşulları vinç çalışmalarını doğrudan etkiler. Ne zaman durulmalı, hangi önlemler alınmalı? Saha deneyimlerimizden pratik bilgiler.",
+    date: "1 Nisan 2025",
+    readTime: "5 dk",
+    category: "Güvenlik",
+  },
+  {
+    slug: "sanayi-tesislerinde-vinc-kiralama",
+    title: "Sanayi Tesislerinde Vinç Kiralama: Özel Gereksinimler",
+    excerpt: "Fabrika ve OSB içindeki vinç operasyonları standart şantiye çalışmalarından farklı uzmanlık gerektirir. Manisa ve Salihli OSB deneyimimizden yola çıkarak tüm detayları aktarıyoruz.",
+    date: "25 Mart 2025",
+    readTime: "6 dk",
+    category: "Sektör",
+  },
+  {
     slug: "salihli-vinc-kiralama",
     title: "Salihli'de Vinç Kiralama: Nelere Dikkat Etmeli?",
     excerpt: "Salihli ve Manisa bölgesinde vinç kiralama sürecinde dikkat etmeniz gereken önemli noktalar, fiyatlandırma ve doğru vinç seçimi hakkında rehber bilgiler.",

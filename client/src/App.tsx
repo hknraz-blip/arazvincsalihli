@@ -18,6 +18,8 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogSalihliVincKiralama = lazy(() => import("./pages/BlogSalihliVincKiralama"));
 const BlogHiabVincNedir = lazy(() => import("./pages/BlogHiabVincNedir"));
 const BlogAgirYukTasimaGuvenlik = lazy(() => import("./pages/BlogAgirYukTasimaGuvenlik"));
+const BlogVincOperasyonundaHavaKosullari = lazy(() => import("./pages/BlogVincOperasyonundaHavaKosullari"));
+const BlogSanayiTesislerindeVincKiralama = lazy(() => import("./pages/BlogSanayiTesislerindeVincKiralama"));
 
 function Router() {
   return (
@@ -34,6 +36,8 @@ function Router() {
         <Route path={"/blog/salihli-vinc-kiralama"} component={BlogSalihliVincKiralama} />
         <Route path={"/blog/hiab-vinc-nedir"} component={BlogHiabVincNedir} />
         <Route path={"/blog/agir-yuk-tasima-guvenlik"} component={BlogAgirYukTasimaGuvenlik} />
+        <Route path={"/blog/vinc-operasyonunda-hava-kosullari"} component={BlogVincOperasyonundaHavaKosullari} />
+        <Route path={"/blog/sanayi-tesislerinde-vinc-kiralama"} component={BlogSanayiTesislerindeVincKiralama} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>

@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import viteConfig from "../../vite.config";
+import { getPageMeta, injectMeta, isBot } from "./seo";
 
 export async function setupVite(app: Express, server: Server) {
   const serverOptions = {
@@ -47,7 +48,6 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  // Server (dist/index.js) ve frontend (dist/index.html) aynı klasörde
   const distPath = path.resolve(import.meta.dirname);
 
   console.log(`[serveStatic] dirname: ${import.meta.dirname}`);
@@ -56,7 +56,30 @@ export function serveStatic(app: Express) {
 
   app.use(express.static(distPath));
 
-  app.use("*", (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
+  // Bot tespiti: arama motoru botlarına route'a özel meta inject edilmiş HTML döndür
+  app.use("*", (req, res) => {
+    const ua = req.headers["user-agent"] ?? "";
+    const indexPath = path.resolve(distPath, "index.html");
+
+    if (isBot(ua)) {
+      // pathname'i temizle (?query ve #hash olmadan)
+      const pathname = req.path.replace(/\/$/, "") || "/";
+      const meta = getPageMeta(pathname);
+
+      fs.readFile(indexPath, "utf-8", (err, html) => {
+        if (err) {
+          res.status(500).send("Server error");
+          return;
+        }
+        const injected = injectMeta(html, meta);
+        res
+          .status(200)
+          .set({ "Content-Type": "text/html", "X-Robots-Tag": "index, follow" })
+          .send(injected);
+      });
+    } else {
+      // Normal kullanıcılar için doğrudan index.html
+      res.sendFile(indexPath);
+    }
   });
 }

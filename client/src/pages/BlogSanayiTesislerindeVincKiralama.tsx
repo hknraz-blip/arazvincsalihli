@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Phone, CheckCircle, Clock, Tag } from "lucide-react";
 import { useLocation } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function BlogSanayiTesislerindeVincKiralama() {
   const [, navigate] = useLocation();
+
+  useSEO({
+    title: "Sanayi Tesislerinde Vinç Kiralama: Özel Gereksinimler | Araz Vinç",
+    description: "Salihli OSB ve Manisa fabrikalarında vinç kiralama sürecinin gereklilikleri, güvenlik protokolleri ve doğru ekipman seçimi. Uzman rehberi. Tel: 0544 451 33 41",
+    canonical: "https://arazvincsalihli.com/blog/sanayi-tesislerinde-vinc-kiralama",
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -14,38 +21,32 @@ export default function BlogSanayiTesislerindeVincKiralama() {
             "@context": "https://schema.org",
             "@type": "Article",
             headline: "Sanayi Tesislerinde Vinç Kiralama: Özel Gereksinimler",
-            description:
-              "Fabrika ve organize sanayi bölgelerinde vinç kiralama sürecinin kendine özgü gereklilikleri, güvenlik protokolleri ve Manisa OSB özelinde pratik bilgiler.",
+            description: "Fabrika ve organize sanayi bölgelerinde vinç kiralama sürecinin kendine özgü gereklilikleri, güvenlik protokolleri ve Salihli OSB özelinde pratik bilgiler.",
             author: { "@type": "Organization", name: "Araz Vinç Salihli" },
             publisher: { "@type": "Organization", name: "Araz Vinç Salihli", url: "https://arazvincsalihli.com" },
             datePublished: "2025-03-25",
+            dateModified: "2026-04-03",
             url: "https://arazvincsalihli.com/blog/sanayi-tesislerinde-vinc-kiralama",
           }),
         }}
       />
 
-      {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50">
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-16">
-            <button
-              onClick={() => navigate("/blog")}
-              className="flex items-center gap-2 text-gray-700 hover:text-orange-600 transition-colors"
-            >
+            <button onClick={() => navigate("/blog")} className="flex items-center gap-2 text-gray-700 hover:text-orange-600 transition-colors">
               <ArrowLeft className="h-5 w-5" />
               <span className="font-medium">Blog'a Dön</span>
             </button>
             <a href="tel:05444513341">
               <Button className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white shadow-lg">
-                <Phone className="h-4 w-4 mr-2" />
-                Hemen Ara
+                <Phone className="h-4 w-4 mr-2" />Hemen Ara
               </Button>
             </a>
           </nav>
         </div>
       </header>
 
-      {/* Hero */}
       <section className="pt-24 py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -62,21 +63,17 @@ export default function BlogSanayiTesislerindeVincKiralama() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             Sanayi Tesislerinde Vinç Kiralama:{" "}
-            <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">
-              Özel Gereksinimler
-            </span>
+            <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">Özel Gereksinimler</span>
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed">
-            Fabrika ve organize sanayi bölgelerindeki vinç operasyonları, standart şantiye çalışmalarından farklı uzmanlık ve dikkat gerektirir. Manisa ve Salihli OSB deneyimimizden yola çıkarak tüm detayları aktarıyoruz.
+            Fabrika ve organize sanayi bölgelerindeki vinç operasyonları, standart şantiye çalışmalarından farklı uzmanlık ve dikkat gerektirir. Salihli ve Manisa OSB deneyimimizden yola çıkarak tüm detayları aktarıyoruz.
           </p>
         </div>
       </section>
 
-      {/* Makale İçeriği */}
       <article className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="prose prose-lg max-w-none">
-
             <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-10">Sanayi Tesislerinde Vinç İhtiyacı Neden Farklıdır?</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               Fabrikalar ve organize sanayi bölgeleri (OSB), kendine özgü fiziksel kısıtlamaları ve güvenlik protokolleriyle açık şantiyelerden ayrışır. Dar geçitler, alçak tavan yükseklikleri, yoğun ekipman yerleşimi ve aktif üretim hatları; vinç seçimini, giriş planlamasını ve operasyon sürecini doğrudan etkiler. Bu nedenle deneyimsiz bir ekiple gerçekleştirilen sanayi içi vinç operasyonu, ciddi hasar ve iş durağanlaşması risklerini beraberinde getirir.
@@ -101,9 +98,6 @@ export default function BlogSanayiTesislerindeVincKiralama() {
             </div>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-10">Sanayi İçi Vinç Seçimi: Hangi Ekipman Uygun?</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Tesisin fiziksel özellikleri doğru vinç tipini belirler. En sık karşılaşılan senaryolar şunlardır:
-            </p>
             <ul className="space-y-2 mb-8">
               {[
                 "Geniş açık alanlı tesisler: Hiab vinç veya mobil vinç, manevra kabiliyeti nedeniyle tercih edilir",
@@ -120,9 +114,6 @@ export default function BlogSanayiTesislerindeVincKiralama() {
             </ul>
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-10">Sanayi Tesislerinde Güvenlik Protokolleri</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              OSB ve fabrika operasyonlarında güvenlik gereklilikleri, açık alandakilere kıyasla çok daha katıdır. Vinç firmanızdan şu belge ve uygulamaları talep etmenizi öneririz:
-            </p>
             <div className="space-y-4 mb-8">
               {[
                 { title: "İş İzni (Permit to Work)", desc: "Birçok büyük sanayi tesisi, tüm yüklenicilerden yazılı iş izni belgesi talep eder. Vinç firmanızın bu sürece uyum sağlayabiliyor olması gerekir." },
@@ -140,7 +131,7 @@ export default function BlogSanayiTesislerindeVincKiralama() {
               ))}
             </div>
 
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-10">Manisa ve Salihli OSB'deki Deneyimimiz</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-10">Salihli ve Manisa OSB'deki Deneyimimiz</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               Araz Vinç olarak Manisa Organize Sanayi Bölgesi ve Salihli Organize Sanayi Bölgesi'nde onlarca tesis için makine montajı, ekipman taşıma ve acil müdahale hizmetleri verdik. Bölge yollarını, tesis giriş prosedürlerini ve yerel güvenlik gerekliliklerini yakından biliyor olmamız, operasyon planlama sürecini sizin için büyük ölçüde kolaylaştırıyor. Üretim duruşunu en aza indiren hızlı ve güvenli çözümler için ekibimizle iletişime geçin.
             </p>
@@ -148,15 +139,13 @@ export default function BlogSanayiTesislerindeVincKiralama() {
         </div>
       </article>
 
-      {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-orange-600 to-orange-700">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Sanayi Tesisi İçin Teklif Alın</h2>
-          <p className="text-orange-100 mb-8 text-lg">Manisa ve Salihli OSB'de uzman vinç hizmetleri</p>
+          <p className="text-orange-100 mb-8 text-lg">Salihli ve Manisa OSB'de uzman vinç hizmetleri</p>
           <a href="tel:05444513341">
             <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 shadow-lg">
-              <Phone className="h-5 w-5 mr-2" />
-              0544 451 33 41 - Hemen Arayın
+              <Phone className="h-5 w-5 mr-2" />0544 451 33 41 - Hemen Arayın
             </Button>
           </a>
         </div>

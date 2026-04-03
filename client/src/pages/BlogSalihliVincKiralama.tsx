@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Phone, CheckCircle, Clock, Tag } from "lucide-react";
 import { useLocation } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function BlogSalihliVincKiralama() {
   const [, navigate] = useLocation();
+
+  useSEO({
+    title: "Salihli'de Vinç Kiralama: Nelere Dikkat Etmeli? | Araz Vinç",
+    description: "Salihli ve Manisa'da vinç kiralama sürecinde doğru vinç seçimi, fiyatlandırma ve güvenilir firma kriterleri. Uzman rehberi. Tel: 0544 451 33 41",
+    canonical: "https://arazvincsalihli.com/blog/salihli-vinc-kiralama",
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -20,6 +27,7 @@ export default function BlogSalihliVincKiralama() {
             author: { "@type": "Organization", name: "Araz Vinç Salihli" },
             publisher: { "@type": "Organization", name: "Araz Vinç Salihli", url: "https://arazvincsalihli.com" },
             datePublished: "2025-03-20",
+            dateModified: "2026-04-03",
             url: "https://arazvincsalihli.com/blog/salihli-vinc-kiralama",
           }),
         }}
@@ -142,7 +150,7 @@ export default function BlogSalihliVincKiralama() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-10">Salihli ve Manisa'da Vinç Hizmetleri</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Araz Vinç olarak Salihli merkez ve çevre ilçelerde 25 yılı aşkın deneyimimizle hizmet veriyoruz. 55 tonluk Hiab vincimiz ve 25 metre sepetli vincimizle inşaat, sanayi, araç kurtarma ve daha pek çok alanda yanınızdayız. Sertifikalı operatörlerimiz ve sigortalı ekipmanlarımızla her projenizde güvenli çözümler sunuyoruz.
+              Araz Vinç olarak Salihli merkez ve çevre ilçelerde (Alaşehir, Turgutlu, Sarıgöl) deneyimimizle hizmet veriyoruz. 55 tonluk Hiab vincimiz ve 25 metre sepetli vincimizle inşaat, sanayi, araç kurtarma ve daha pek çok alanda yanınızdayız. Sertifikalı operatörlerimiz ve sigortalı ekipmanlarımızla her projenizde güvenli çözümler sunuyoruz.
             </p>
           </div>
         </div>

@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Phone, CheckCircle, Clock, Tag } from "lucide-react";
 import { useLocation } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function BlogHiabVincNedir() {
   const [, navigate] = useLocation();
+
+  useSEO({
+    title: "Hiab Vinç Nedir? Kullanım Alanları ve Avantajları | Araz Vinç",
+    description: "Hiab vinç (araç üstü vinç) nedir, nasıl çalışır, hangi işlerde kullanılır? 55 ton kapasiteli Hiab vincimizle Salihli ve Manisa'da hizmet. Tel: 0544 451 33 41",
+    canonical: "https://arazvincsalihli.com/blog/hiab-vinc-nedir",
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -19,6 +26,7 @@ export default function BlogHiabVincNedir() {
             author: { "@type": "Organization", name: "Araz Vinç Salihli" },
             publisher: { "@type": "Organization", name: "Araz Vinç Salihli", url: "https://arazvincsalihli.com" },
             datePublished: "2025-03-15",
+            dateModified: "2026-04-03",
             url: "https://arazvincsalihli.com/blog/hiab-vinc-nedir",
           }),
         }}
@@ -155,7 +163,7 @@ export default function BlogHiabVincNedir() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-10">Araz Vinç'in 55 Tonluk Hiab Hizmeti</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Araz Vinç olarak Salihli ve Manisa'da 55 ton kapasiteli Hiab vincimizle hizmet veriyoruz. Deneyimli operatörlerimiz ve sigortalı ekipmanımızla her ölçekte projeye çözüm üretiyoruz. Beton köşk montajından araç kurtarmaya, çatı çalışmalarından sanayi ekipmanı taşımacılığına kadar geniş bir yelpazede destek sağlıyoruz.
+              Araz Vinç olarak Salihli, Manisa, Alaşehir ve Turgutlu'da 55 ton kapasiteli Hiab vincimizle hizmet veriyoruz. Deneyimli operatörlerimiz ve sigortalı ekipmanımızla her ölçekte projeye çözüm üretiyoruz. Beton köşk montajından araç kurtarmaya, çatı çalışmalarından sanayi ekipmanı taşımacılığına kadar geniş bir yelpazede destek sağlıyoruz.
             </p>
           </div>
         </div>

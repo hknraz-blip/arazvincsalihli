@@ -7,7 +7,7 @@
   <!-- Ana Sayfa -->
   <url>
     <loc>https://arazvincsalihli.com/</loc>
-    <lastmod>2025-03-20</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -15,31 +15,31 @@
   <!-- Hizmet Sayfaları -->
   <url>
     <loc>https://arazvincsalihli.com/service/mobile-crane</loc>
-    <lastmod>2025-03-08</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://arazvincsalihli.com/service/safe-transport</loc>
-    <lastmod>2025-03-08</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://arazvincsalihli.com/service/24-7</loc>
-    <lastmod>2025-03-08</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://arazvincsalihli.com/service/construction</loc>
-    <lastmod>2025-03-08</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://arazvincsalihli.com/service/industrial</loc>
-    <lastmod>2025-03-08</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -47,37 +47,37 @@
   <!-- Blog -->
   <url>
     <loc>https://arazvincsalihli.com/blog</loc>
-    <lastmod>2025-04-01</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://arazvincsalihli.com/blog/vinc-operasyonunda-hava-kosullari</loc>
-    <lastmod>2025-04-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://arazvincsalihli.com/blog/sanayi-tesislerinde-vinc-kiralama</loc>
-    <lastmod>2025-03-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
     <loc>https://arazvincsalihli.com/blog/salihli-vinc-kiralama</loc>
-    <lastmod>2025-03-20</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://arazvincsalihli.com/blog/hiab-vinc-nedir</loc>
-    <lastmod>2025-03-15</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://arazvincsalihli.com/blog/agir-yuk-tasima-guvenlik</loc>
-    <lastmod>2025-03-10</lastmod>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://arazvincsalihli.com/blog/vinc-operasyonunda-hava-kosullari</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://arazvincsalihli.com/blog/sanayi-tesislerinde-vinc-kiralama</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

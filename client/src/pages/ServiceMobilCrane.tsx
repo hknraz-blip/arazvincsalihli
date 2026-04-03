@@ -2,9 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Phone, CheckCircle, Truck, AlertCircle, Zap } from "lucide-react";
 import { useLocation } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function ServiceMobilCrane() {
   const [, navigate] = useLocation();
+
+  useSEO({
+    title: "Mobil Vinç Kiralama Salihli & Manisa | Araz Vinç – 7/24",
+    description: "Salihli ve Manisa'da 10–55 ton arası mobil vinç kiralama. Sertifikalı operatörler, 30 dakikada sahada, sigortalı taşıma. Ücretsiz teklif: 0544 451 33 41",
+    canonical: "https://arazvincsalihli.com/service/mobile-crane",
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -65,7 +72,7 @@ export default function ServiceMobilCrane() {
               <div className="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent rounded-2xl"></div>
               <img 
                 src="/araz-vinc-machine.jpg" 
-                alt="Mobil Vinç" 
+                alt="Salihli Mobil Vinç Kiralama – Araz Vinç" 
                 className="rounded-2xl shadow-2xl w-full h-full object-cover"
               />
             </div>
@@ -85,7 +92,7 @@ export default function ServiceMobilCrane() {
                   <Truck className="h-6 w-6 text-orange-600 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-bold text-gray-900 mb-2">Farklı Tonajlar</h3>
-                    <p className="text-gray-600">10 tondan 150 tona kadar çeşitli vinç kapasiteleri mevcuttur. Projenizin ihtiyacına göre en uygun vinçi seçebilirsiniz.</p>
+                    <p className="text-gray-600">10 tondan 55 tona kadar çeşitli vinç kapasiteleri mevcuttur. Projenizin ihtiyacına göre en uygun vinçi seçebilirsiniz.</p>
                   </div>
                 </div>
 
@@ -168,7 +175,7 @@ export default function ServiceMobilCrane() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Saatlik</h3>
                 <p className="text-gray-600 mb-4">Kısa süreli işler için</p>
                 <div className="text-3xl font-bold text-orange-600 mb-4">Uygun Fiyat</div>
-                <Button className="w-full bg-orange-600 hover:bg-orange-700">Teklif Al</Button>
+                <a href="tel:05444513341"><Button className="w-full bg-orange-600 hover:bg-orange-700">Teklif Al</Button></a>
               </CardContent>
             </Card>
 
@@ -178,7 +185,7 @@ export default function ServiceMobilCrane() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Günlük</h3>
                 <p className="text-gray-600 mb-4">Orta süreli projeler için</p>
                 <div className="text-3xl font-bold text-orange-600 mb-4">En İyi Değer</div>
-                <Button className="w-full bg-orange-600 hover:bg-orange-700">Teklif Al</Button>
+                <a href="tel:05444513341"><Button className="w-full bg-orange-600 hover:bg-orange-700">Teklif Al</Button></a>
               </CardContent>
             </Card>
 
@@ -187,7 +194,7 @@ export default function ServiceMobilCrane() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Aylık</h3>
                 <p className="text-gray-600 mb-4">Uzun süreli projeler için</p>
                 <div className="text-3xl font-bold text-orange-600 mb-4">İndirimli</div>
-                <Button className="w-full bg-orange-600 hover:bg-orange-700">Teklif Al</Button>
+                <a href="tel:05444513341"><Button className="w-full bg-orange-600 hover:bg-orange-700">Teklif Al</Button></a>
               </CardContent>
             </Card>
           </div>

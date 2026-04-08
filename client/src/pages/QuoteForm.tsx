@@ -37,16 +37,21 @@ export default function QuoteForm() {
     setLoading(true);
     
     try {
-      // Simulate form submission
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // In a real application, you would send this data to your backend
       console.log("Form submitted:", formData);
       
       toast.success("Teklif talebiniz alındı! En kısa sürede sizinle iletişime geçeceğiz.");
 
-      // Google Ads dönüşüm olayını tetikle
-      gtagSendEvent(window.location.href);
+      // Google Ads CONTACT dönüşüm olayını tetikle (conversion_event_contact_1)
+      if (typeof gtagSendEvent === 'function') {
+        gtagSendEvent(window.location.href);
+      } else if (typeof gtag === 'function') {
+        (gtag as Function)('event', 'conversion_event_contact_1', {
+          'event_callback': () => {},
+          'event_timeout': 2000,
+        });
+      }
       
       // Reset form
       setFormData({

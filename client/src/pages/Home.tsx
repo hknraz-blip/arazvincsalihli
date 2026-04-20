@@ -13,7 +13,8 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const [activeFilter, setActiveFilter] = useState("Тümü");
+  // DÜZELTME: "Тümü" (Kiril T) → "Tümü" (Latin T)
+  const [activeFilter, setActiveFilter] = useState("Tümü");
 
   const galleryItems = [
     { src: "/galeri/beton-kosk-montaj-1.jpg",         title: "Beton Köşk Montajı",             category: "Sanayi",       desc: "Beton trafo köşkünün inşaat sahasına indirilmesi ve montajı" },

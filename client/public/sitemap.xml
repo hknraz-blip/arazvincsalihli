@@ -12,7 +12,7 @@
     <priority>1.00</priority>
   </url>
 
-  <!-- Hizmet Sayfaları (Yeni Türkçe URL'ler) -->
+  <!-- Hizmet Sayfaları -->
   <url>
     <loc>https://arazvincsalihli.com/mobil-vinc-kiralama-salihli</loc>
     <lastmod>2026-04-20</lastmod>
@@ -64,7 +64,7 @@
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://arazvincsalihli.com/k%C3%B6pr%C3%BCba%C5%9F%C4%B1-sarigol-vinc-kiralama</loc>
+    <loc>https://arazvincsalihli.com/koprubasi-sarigol-vinc-kiralama</loc>
     <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>

@@ -12,7 +12,7 @@ export default function LocationKoprubasiSarigol() {
   useSEO({
     title: "Köprübaşı & Sarıgöl Vinç Kiralama | Araz Vinç – 7/24",
     description: "Köprübaşı ve Sarıgöl'de vinç kiralama hizmetleri. Salihli merkezli, hızlı ulaşım, 7/24 destek. İnşaat, sanayi ve acil kurtarma. Tel: 0544 451 33 41",
-    canonical: "https://arazvincsalihli.com/koprubaşı-sarigol-vinc-kiralama",
+    canonical: "https://arazvincsalihli.com/koprubasi-sarigol-vinc-kiralama",
   });
 
   return (
@@ -27,7 +27,7 @@ export default function LocationKoprubasiSarigol() {
           { "@type": "City", "name": "Sarıgöl" }
         ],
         "description": "Köprübaşı ve Sarıgöl ilçelerinde profesyonel vinç kiralama hizmetleri.",
-        "url": "https://arazvincsalihli.com/koprubaşı-sarigol-vinc-kiralama",
+        "url": "https://arazvincsalihli.com/koprubasi-sarigol-vinc-kiralama",
       })}} />
 
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50">
@@ -48,7 +48,6 @@ export default function LocationKoprubasiSarigol() {
         </div>
       </header>
 
-      {/* Hero */}
       <section className="pt-24 min-h-[55vh] flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-3xl text-white">
@@ -71,7 +70,6 @@ export default function LocationKoprubasiSarigol() {
         </div>
       </section>
 
-      {/* Köprübaşı ve Sarıgöl İçeriği */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Köprübaşı ve Sarıgöl'de Vinç Hizmetleri</h2>
@@ -98,7 +96,6 @@ export default function LocationKoprubasiSarigol() {
         </div>
       </section>
 
-      {/* Ulaşım Süresi */}
       <section className="py-14 bg-orange-50 border-y border-orange-100">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Salihli'den Tahmini Ulaşım Süreleri</h2>
@@ -115,7 +112,6 @@ export default function LocationKoprubasiSarigol() {
         </div>
       </section>
 
-      {/* Diğer Bölgeler */}
       <section className="py-14 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Tüm Hizmet Bölgelerimiz</h2>
@@ -132,7 +128,6 @@ export default function LocationKoprubasiSarigol() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-orange-600 to-orange-700">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">Köprübaşı veya Sarıgöl'de Vinç Kiralama</h2>

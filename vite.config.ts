@@ -18,8 +18,8 @@ export default defineConfig({
   root: path.resolve(import.meta.dirname, "client"),
   publicDir: path.resolve(import.meta.dirname, "client", "public"),
   build: {
-    // Çıktı dist/public altına — server/index.ts bu yolu bekliyor
-    outDir: path.resolve(import.meta.dirname, "dist", "public"),
+    // dist/ köküne build et — Render Static Site 'Publish Directory: dist' ile uyumlu
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
   server: {

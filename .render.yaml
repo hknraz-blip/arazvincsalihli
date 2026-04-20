@@ -1,6 +1,10 @@
 services:
   - type: web
     name: arazvincsalihli
-    env: node
+    env: static
     buildCommand: pnpm install --no-frozen-lockfile && pnpm run build
-    startCommand: pnpm start
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

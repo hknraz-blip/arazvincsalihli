@@ -2,6 +2,7 @@ import express from "express";
 import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readFileSync } from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -53,10 +54,10 @@ const routeMeta: Record<string, { title: string; description: string; canonical:
     description: "Demirci ilçesinde profesyonel vinç kiralama hizmetleri. Ağır yük taşıma, makine montajı. 7/24 destek. Tel: 0544 451 33 41",
     canonical: "https://arazvincsalihli.com/demirci-vinc-kiralama",
   },
-  "/koprubaşı-sarigol-vinc-kiralama": {
+  "/köprübaşı-sarigol-vinc-kiralama": {
     title: "Köprübaşı & Sarıgöl Vinç Kiralama | Araz Vinç",
     description: "Köprübaşı ve Sarıgöl'de vinç kiralama hizmetleri. Salihli merkezli, hızlı ulaşım, 7/24 destek. Tel: 0544 451 33 41",
-    canonical: "https://arazvincsalihli.com/koprubaşı-sarigol-vinc-kiralama",
+    canonical: "https://arazvincsalihli.com/köprübaşı-sarigol-vinc-kiralama",
   },
   "/blog": {
     title: "Vinç Kiralama Blog | Uzman Rehberleri | Araz Vinç Salihli",
@@ -97,49 +98,68 @@ async function startServer() {
   const app = express();
   const server = createServer(app);
 
+  // Üretimde dist/public, geliştirmede client/public
   const staticPath =
     process.env.NODE_ENV === "production"
       ? path.resolve(__dirname, "public")
-      : path.resolve(__dirname, "..", "dist", "public");
+      : path.resolve(__dirname, "..", "client", "public");
 
-  app.use(express.static(staticPath));
+  // Statik dosyaları sun — resimler, galeri klasörü dahil
+  // HTML dışı dosyalar için agresif cache, HTML için no-cache
+  app.use(
+    express.static(staticPath, {
+      setHeaders: (res, filePath) => {
+        if (filePath.endsWith(".html")) {
+          res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        } else if (/\.(jpg|jpeg|png|gif|webp|svg|ico)$/.test(filePath)) {
+          res.setHeader("Cache-Control", "public, max-age=2592000"); // 30 gün
+        } else {
+          res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+        }
+      },
+    })
+  );
 
-  // Handle client-side routing
+  // SPA routing — tüm rotalar için index.html
   app.get("*", (req, res) => {
     const ua = req.headers["user-agent"] || "";
     const requestPath = req.path;
+    const indexPath = path.join(staticPath, "index.html");
 
     // Bot için meta injection
     if (isBot(ua)) {
-      const meta = routeMeta[requestPath] || routeMeta["/"];
-      const fs = await import("fs");
-      let html = fs.readFileSync(path.join(staticPath, "index.html"), "utf-8");
-      html = html
-        .replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`)
-        .replace(
-          /<meta name="description" content="[^"]*">/,
-          `<meta name="description" content="${meta.description}">`
-        )
-        .replace(
-          /<link rel="canonical" href="[^"]*" \/>/,
-          `<link rel="canonical" href="${meta.canonical}" />`
-        )
-        .replace(
-          /<meta property="og:title" content="[^"]*">/,
-          `<meta property="og:title" content="${meta.title}">`
-        )
-        .replace(
-          /<meta property="og:description" content="[^"]*">/,
-          `<meta property="og:description" content="${meta.description}">`
-        )
-        .replace(
-          /<meta property="og:url" content="[^"]*">/,
-          `<meta property="og:url" content="${meta.canonical}">`
-        );
-      return res.send(html);
+      try {
+        const meta = routeMeta[requestPath] || routeMeta["/"];
+        let html = readFileSync(indexPath, "utf-8");
+        html = html
+          .replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`)
+          .replace(
+            /<meta name="description" content="[^"]*">/,
+            `<meta name="description" content="${meta.description}">`
+          )
+          .replace(
+            /<link rel="canonical" href="[^"]*" \/>/,
+            `<link rel="canonical" href="${meta.canonical}" />`
+          )
+          .replace(
+            /<meta property="og:title" content="[^"]*">/,
+            `<meta property="og:title" content="${meta.title}">`
+          )
+          .replace(
+            /<meta property="og:description" content="[^"]*">/,
+            `<meta property="og:description" content="${meta.description}">`
+          )
+          .replace(
+            /<meta property="og:url" content="[^"]*">/,
+            `<meta property="og:url" content="${meta.canonical}">`
+          );
+        return res.send(html);
+      } catch {
+        // index.html okunamazsa normal akışa devam et
+      }
     }
 
-    res.sendFile(path.join(staticPath, "index.html"));
+    res.sendFile(indexPath);
   });
 
   const port = process.env.PORT || 3000;

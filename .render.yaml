@@ -4,7 +4,3 @@ services:
     env: node
     buildCommand: pnpm install --no-frozen-lockfile && pnpm run build
     startCommand: pnpm start
-    headers:
-      - path: /*
-        name: Cache-Control
-        value: public, max-age=31536000, immutable

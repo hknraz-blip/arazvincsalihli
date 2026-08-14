@@ -54,10 +54,10 @@ const routeMeta: Record<string, { title: string; description: string; canonical:
     description: "Demirci ilçesinde profesyonel vinç kiralama hizmetleri. Ağır yük taşıma, makine montajı. 7/24 destek. Tel: 0544 451 33 41",
     canonical: "https://arazvincsalihli.com/demirci-vinc-kiralama",
   },
-  "/köprübaşı-sarigol-vinc-kiralama": {
+  "/koprubasi-sarigol-vinc-kiralama": {
     title: "Köprübaşı & Sarıgöl Vinç Kiralama | Araz Vinç",
     description: "Köprübaşı ve Sarıgöl'de vinç kiralama hizmetleri. Salihli merkezli, hızlı ulaşım, 7/24 destek. Tel: 0544 451 33 41",
-    canonical: "https://arazvincsalihli.com/köprübaşı-sarigol-vinc-kiralama",
+    canonical: "https://arazvincsalihli.com/koprubasi-sarigol-vinc-kiralama",
   },
   "/blog": {
     title: "Vinç Kiralama Blog | Uzman Rehberleri | Araz Vinç Salihli",

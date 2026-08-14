@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Phone, CheckCircle, Clock, Tag } from "lucide-react";
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function BlogSalihliVincKiralama() {
@@ -150,7 +150,7 @@ export default function BlogSalihliVincKiralama() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-10">Salihli ve Manisa'da Vinç Hizmetleri</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Araz Vinç olarak Salihli merkez ve çevre ilçelerde (Alaşehir, Turgutlu, Sarıgöl) deneyimimizle hizmet veriyoruz. 55 tonluk Hiab vincimiz ve 25 metre sepetli vincimizle inşaat, sanayi, araç kurtarma ve daha pek çok alanda yanınızdayız. Sertifikalı operatörlerimiz ve sigortalı ekipmanlarımızla her projenizde güvenli çözümler sunuyoruz.
+              Araz Vinç olarak Salihli merkez ve çevre ilçelerde (<Link href="/alasehir-vinc-kiralama" className="text-orange-600 font-semibold hover:underline">Alaşehir vinç kiralama</Link>, <Link href="/kula-vinc-kiralama" className="text-orange-600 font-semibold hover:underline">Kula</Link>, <Link href="/koprubasi-sarigol-vinc-kiralama" className="text-orange-600 font-semibold hover:underline">Sarıgöl</Link>) 15 yılı aşkın deneyimimizle hizmet veriyoruz. 55 tonluk Hiab vincimizle <Link href="/insaat-vinc-kiralama-salihli" className="text-orange-600 font-semibold hover:underline">inşaat vinç kiralama</Link>, <Link href="/mobil-vinc-kiralama-salihli" className="text-orange-600 font-semibold hover:underline">mobil vinç kiralama</Link> ve <Link href="/acil-vinc-hizmeti-salihli" className="text-orange-600 font-semibold hover:underline">7/24 acil vinç hizmeti</Link> sunuyoruz. Sertifikalı operatörlerimiz ve sigortalı ekipmanlarımızla her projenizde yanınızdayız.
             </p>
           </div>
         </div>

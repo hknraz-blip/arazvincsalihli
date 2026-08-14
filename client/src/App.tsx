@@ -61,6 +61,8 @@ function Router() {
   );
 }
 
+import MobileCallBar from "./components/MobileCallBar";
+
 function App() {
   return (
     <ErrorBoundary>
@@ -68,6 +70,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <MobileCallBar />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

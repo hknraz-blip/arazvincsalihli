@@ -445,8 +445,8 @@ export default function Home() {
                 <div className="h-14 w-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full flex items-center justify-center mx-auto mb-6"><MapPin className="h-7 w-7 text-orange-600" /></div>
                 <h3 className="font-bold text-gray-900 mb-3 text-lg">Adres</h3>
                 <p className="text-gray-600 font-medium">Abay Bulvarı No: 72<br />Salihli / Manisa</p>
-                <a href="https://maps.google.com/?q=Abay+Bulvarı+No:+72+Salihli+Manisa" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-xs font-bold text-orange-600 hover:underline">
-                  Yol Tarifi Al (Google Maps) →
+                <a href="https://share.google/7Q93yOqhkBwySCRYO" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-xs font-bold text-orange-600 hover:underline">
+                  Yol Tarifi Al (Google Haritalar) →
                 </a>
               </CardContent>
             </Card>
@@ -523,8 +523,8 @@ export default function Home() {
               <h4 className="font-bold text-white text-base mb-4 tracking-wide uppercase text-xs text-orange-400">İletişim & Konum</h4>
               <p className="text-gray-300 font-semibold mb-1">Araz Vinç Salihli</p>
               <p className="text-gray-400 text-sm mb-2">Abay Bulvarı No: 72<br />Salihli / Manisa</p>
-              <a href="https://maps.google.com/?q=Abay+Bulvarı+No:+72+Salihli+Manisa" target="_blank" rel="noopener noreferrer" className="inline-block text-xs font-semibold text-orange-400 hover:underline mb-3">
-                📍 Haritada Aç (Google Maps) →
+              <a href="https://share.google/7Q93yOqhkBwySCRYO" target="_blank" rel="noopener noreferrer" className="inline-block text-xs font-semibold text-orange-400 hover:underline mb-3">
+                📍 Haritada Aç (Google Haritalar) →
               </a>
               <br />
               <a href="tel:05444513341" onClick={trackCall} className="inline-block text-orange-400 font-bold text-lg hover:text-orange-300 transition-colors mb-1">

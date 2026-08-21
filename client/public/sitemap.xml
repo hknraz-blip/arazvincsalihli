@@ -91,8 +91,26 @@
   <!-- Blog -->
   <url>
     <loc>https://arazvincsalihli.com/blog</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://arazvincsalihli.com/blog/sepetli-vinc-mi-iskele-mi</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://arazvincsalihli.com/blog/salihli-vinc-kiralama-fiyatlari</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://arazvincsalihli.com/blog/agir-vasita-kamyon-kurtarma-rehberi</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>

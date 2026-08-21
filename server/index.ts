@@ -76,8 +76,23 @@ const routeMeta: Record<string, { title: string; description: string; canonical:
   },
   "/blog": {
     title: "Vinç Kiralama Blog | Uzman Rehberleri | Araz Vinç Salihli",
-    description: "Vinç kiralama, ağır yük taşıma ve sanayi operasyonları hakkında uzman rehberleri. Araz Vinç blog.",
+    description: "Vinç kiralama, sepetli platform, ağır vasıta kurtarma ve sanayi operasyonları hakkında uzman rehberleri. Araz Vinç blog.",
     canonical: "https://arazvincsalihli.com/blog",
+  },
+  "/blog/sepetli-vinc-mi-iskele-mi": {
+    title: "Dış Cephede Sepetli Vinç mi İskele mi? (Maliyet ve Güvenlik) | Araz Vinç",
+    description: "Dış cephe boya, cam temizliği, tabela montajı ve çatı işlerinde sepetli vinç ile iskele karşılaştırması. Hangisi daha ekonomik ve güvenli?",
+    canonical: "https://arazvincsalihli.com/blog/sepetli-vinc-mi-iskele-mi",
+  },
+  "/blog/salihli-vinc-kiralama-fiyatlari": {
+    title: "2026 Salihli Vinç Kiralama Fiyatları Nasıl Hesaplanır? | Araz Vinç",
+    description: "Salihli, Alaşehir, Kula ve Ahmetli'de vinç kiralama fiyatları nasıl belirlenir? Saatlik, günlük ve 55 tonluk Hiab vinç ücret hesaplama rehberi.",
+    canonical: "https://arazvincsalihli.com/blog/salihli-vinc-kiralama-fiyatlari",
+  },
+  "/blog/agir-vasita-kamyon-kurtarma-rehberi": {
+    title: "Devrilen Kamyon ve Tır Nasıl Kurtarılır? (Kaza & Kasko Rehberi) | Araz Vinç",
+    description: "D300 ve Manisa yollarında devrilen kamyon, tır, dorse kurtarma aşamaları, vinç seçimi ve kasko sigorta süreçleri hakkında detaylı rehber.",
+    canonical: "https://arazvincsalihli.com/blog/agir-vasita-kamyon-kurtarma-rehberi",
   },
   "/blog/salihli-vinc-kiralama": {
     title: "Salihli'de Vinç Kiralama: Nelere Dikkat Etmeli? | Araz Vinç",

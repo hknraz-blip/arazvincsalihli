@@ -17,6 +17,9 @@ const ServiceSepetliVinc = lazy(() => import("./pages/ServiceSepetliVinc"));
 const ServiceAgirVasitaKurtarma = lazy(() => import("./pages/ServiceAgirVasitaKurtarma"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogSalihliVincKiralama = lazy(() => import("./pages/BlogSalihliVincKiralama"));
+const BlogSepetliVincMiIskeleMi = lazy(() => import("./pages/BlogSepetliVincMiIskeleMi"));
+const BlogSalihliVincKiralamaFiyatlari = lazy(() => import("./pages/BlogSalihliVincKiralamaFiyatlari"));
+const BlogAgirVasitaKurtarmaRehberi = lazy(() => import("./pages/BlogAgirVasitaKurtarmaRehberi"));
 const BlogHiabVincNedir = lazy(() => import("./pages/BlogHiabVincNedir"));
 const BlogAgirYukTasimaGuvenlik = lazy(() => import("./pages/BlogAgirYukTasimaGuvenlik"));
 const BlogVincOperasyonundaHavaKosullari = lazy(() => import("./pages/BlogVincOperasyonundaHavaKosullari"));
@@ -49,6 +52,9 @@ function Router() {
         <Route path="/service/industrial" component={ServiceIndustrial} />
         {/* Blog */}
         <Route path="/blog" component={Blog} />
+        <Route path="/blog/sepetli-vinc-mi-iskele-mi" component={BlogSepetliVincMiIskeleMi} />
+        <Route path="/blog/salihli-vinc-kiralama-fiyatlari" component={BlogSalihliVincKiralamaFiyatlari} />
+        <Route path="/blog/agir-vasita-kamyon-kurtarma-rehberi" component={BlogAgirVasitaKurtarmaRehberi} />
         <Route path="/blog/salihli-vinc-kiralama" component={BlogSalihliVincKiralama} />
         <Route path="/blog/hiab-vinc-nedir" component={BlogHiabVincNedir} />
         <Route path="/blog/agir-yuk-tasima-guvenlik" component={BlogAgirYukTasimaGuvenlik} />

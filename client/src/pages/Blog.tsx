@@ -6,6 +6,24 @@ import { useSEO } from "@/hooks/useSEO";
 
 const posts = [
   {
+    slug: "sepetli-vinc-mi-iskele-mi",
+    title: "Dış Cephe ve Yüksek İrtifada Sepetli Vinç mi, İskele mi? (Maliyet ve Güvenlik)",
+    excerpt: "Bina dış cephe boyası, cam temizliği, tabela montajı ve çatı tamirinde sepetli vinç ile iskele maliyet, süre ve güvenlik karşılaştırması.",
+    date: "21 Ağustos 2026",
+  },
+  {
+    slug: "salihli-vinc-kiralama-fiyatlari",
+    title: "2026 Salihli Vinç Kiralama Fiyatları: Saatlik ve Günlük Ücretler Nasıl Hesaplanır?",
+    excerpt: "Salihli, Alaşehir, Kula ve Ahmetli bölgesinde vinç kiralarken sürpriz maliyetlerle karşılaşmamak için fiyatı belirleyen 5 temel faktör.",
+    date: "21 Ağustos 2026",
+  },
+  {
+    slug: "agir-vasita-kamyon-kurtarma-rehberi",
+    title: "Karayolunda Devrilen Kamyon ve Tır Nasıl Kurtarılır? (Kaza & Kasko Rehberi)",
+    excerpt: "D300 karayolu ve Manisa yollarında devrilen kamyon, tır, dorse kurtarma aşamaları, vinç seçimi ve kasko sigorta prosedürleri.",
+    date: "21 Ağustos 2026",
+  },
+  {
     slug: "salihli-vinc-kiralama",
     title: "Salihli'de Vinç Kiralama: Bilmeniz Gereken Her Şey",
     excerpt: "Salihli ve çevresinde vinç kiralama sürecinde dikkat edilmesi gereken noktalar, fiyatlar ve doğru firma seçimi hakkında kapsamlı rehber.",

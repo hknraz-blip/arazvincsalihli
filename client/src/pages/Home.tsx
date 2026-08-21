@@ -1,7 +1,7 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, Instagram, Construction, Shield, Clock, Award, Truck, CheckCircle, Star, ArrowRight, ChevronDown, X, ChevronLeft, ChevronRight, ZoomIn, Building } from "lucide-react";
+import { Phone, MapPin, Instagram, Construction, Shield, Clock, Award, Truck, CheckCircle, Star, ArrowRight, ChevronDown, X, ChevronLeft, ChevronRight, ZoomIn, Building, MessageCircle, Wrench, Sparkles } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -20,7 +20,6 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  // DÜZELTME: "Тümü" (Kiril T) → "Tümü" (Latin T)
   const [activeFilter, setActiveFilter] = useState("Tümü");
 
   const galleryItems = [
@@ -28,53 +27,41 @@ export default function Home() {
     { src: "/galeri/beton-kosk-montaj-2.webp",         title: "Beton Köşk Yerleştirme",         category: "Sanayi",       desc: "Beton köşk montaj operasyonunun tamamlanması" },
     { src: "/galeri/beton-kosk-montaj-3.webp",         title: "Beton Köşk İndirme",             category: "Sanayi",       desc: "Büyük beton köşkün araçtan indirilme işlemi" },
     { src: "/galeri/beton-kosk-indirme.webp",          title: "Köşk İndirme Operasyonu",        category: "Sanayi",       desc: "Hiab vinç ile beton köşk indirme ve konumlama" },
-    { src: "/galeri/cati-malzemesi-cikarma-1.webp",    title: "Çatı Malzemesi Çıkarma",         category: "Hiab Vinç",    desc: "Yüksek binada çatı malzemelerinin vinç ile çıkarılması" },
-    { src: "/galeri/cati-malzemesi-cikarma-2.webp",    title: "Çatı Malzemesi Kaldırma",        category: "Hiab Vinç",    desc: "Çok katlı binada çatı malzemesi kaldırma operasyonu" },
-    { src: "/galeri/celik-konstruksiyon-1.webp",       title: "Çelik Konstrüksiyon Montajı",    category: "İnşaat",       desc: "Fabrika inşaatında çelik konstrüksiyon elemanlarının montajı" },
-    { src: "/galeri/celik-konstruksiyon-2.webp",       title: "Çelik Yapı Montajı",             category: "İnşaat",       desc: "Endüstriyel yapıda çelik kolon ve kiriş montaj çalışması" },
-    { src: "/galeri/damperli-kamyon-kurtarma-1.webp",  title: "Damperli Kamyon Kurtarma",       category: "Acil Hizmet",  desc: "Karayolunda devrilmiş damperli kamyonun kurtarılması" },
-    { src: "/galeri/damperli-kamyon-kurtarma-2.webp",  title: "Kamyon Kurtarma Operasyonu",     category: "Acil Hizmet",  desc: "Devrilmiş damperli kamyonun vinç ile kaldırılarak tahliyesi" },
-    { src: "/galeri/dorse-kurtarma.webp",              title: "Dorse Kurtarma",                 category: "Acil Hizmet",  desc: "Yoldan çıkmış dorsenin kurtarma ve tahliye operasyonu" },
-    { src: "/galeri/enjeksiyon-makinasi-indirme.webp", title: "Enjeksiyon Makinası İndirme",   category: "Sanayi",       desc: "Ağır enjeksiyon makinesinin araçtan indirilmesi" },
-    { src: "/galeri/foseptik-deposu-1.webp",           title: "Foseptik Deposu Montajı",        category: "İnşaat",       desc: "Büyük foseptik deposunun zemine yerleştirilmesi" },
-    { src: "/galeri/foseptik-deposu-2.webp",           title: "Foseptik Depo Yerleştirme",      category: "İnşaat",       desc: "Foseptik deposunun hassas konumlandırma operasyonu" },
-    { src: "/galeri/grayder-kurtarma-1.webp",          title: "Grayder Kurtarma",               category: "Acil Hizmet",  desc: "Ormanlık arazide sıkışan graydernın kurtarılması" },
-    { src: "/galeri/grayder-kurtarma-2.webp",          title: "İş Makinesi Kurtarma",           category: "Acil Hizmet",  desc: "Zorlu arazide mahsur kalan iş makinesinin kurtarma operasyonu" },
-    { src: "/galeri/tunel-makina-montaji-1.webp",      title: "Tünel Makina Montajı",           category: "İnşaat",       desc: "Tünel inşaatında makina ve ekipman montaj çalışması" },
-    { src: "/galeri/tunel-makina-montaji-2.webp",      title: "Tünel Ekipman Yerleştirme",      category: "İnşaat",       desc: "Tünel projesinde ağır makina konumlama operasyonu" },
-    { src: "/galeri/tunel-beton-mikseri-1.webp",       title: "Tünelde Beton Mikseri Kurtarma", category: "Acil Hizmet",  desc: "Tünel içinde devrilmiş beton mikserinin kurtarılması" },
-    { src: "/galeri/tunel-beton-mikseri-2.webp",       title: "Tünel İçi Kurtarma",             category: "Acil Hizmet",  desc: "Tünel içindeki araç kurtarma ve tahliye operasyonu" },
-    { src: "/galeri/prefabrik-beton-kosk.webp",        title: "Prefabrik Beton Köşk Montajı",   category: "Sanayi",       desc: "Prefabrik beton köşkün vinç ile montaj ve yerleştirme operasyonu" },
+    { src: "/galeri/beton-mikser-kurtarma-1.webp",     title: "Beton Mikseri Kurtarma",         category: "Kurtarma",     desc: "Tünel inşaatında mahsur kalan beton mikserinin kurtarılması" },
+    { src: "/galeri/beton-mikser-kurtarma-2.webp",     title: "Mikser Çekme Operasyonu",        category: "Kurtarma",     desc: "Vinç yardımıyla beton mikserinin güvenli alana çekilmesi" },
+    { src: "/galeri/damperli-kamyon-kurtarma-1.webp",  title: "Damperli Kamyon Kurtarma",       category: "Kurtarma",     desc: "Devrilen damperli kamyonun vinçle kaldırılması" },
+    { src: "/galeri/damperli-kamyon-kurtarma-2.webp",  title: "Kamyon Doğrultma",               category: "Kurtarma",     desc: "Ağır vasıta kamyonun yola oturtulması operasyonu" },
+    { src: "/galeri/damperli-kamyon-kurtarma-3.webp",  title: "Kamyon Çekme",                   category: "Kurtarma",     desc: "Kurtarılan kamyonun güvenli bölgeye taşınması" },
+    { src: "/galeri/dorse-kurtarma-1.webp",            title: "Dorse Kurtarma",                 category: "Kurtarma",     desc: "Kaza yapan dorse ve tırın vinçle kurtarılması" },
+    { src: "/galeri/dorse-kurtarma-2.webp",            title: "Dorse Kaldırma",                 category: "Kurtarma",     desc: "Şarampole devrilen dorsenin yola çıkarılması" },
+    { src: "/galeri/grayder-kurtarma-1.webp",          title: "Grayder Kurtarma",               category: "Kurtarma",     desc: "Arazide batan iş makinesinin vinçle kurtarılması" },
+    { src: "/galeri/insaat-vinc-operasyon-1.webp",     title: "İnşaat Malzemesi Taşıma",        category: "İnşaat",       desc: "İnşaat sahasında paletli malzeme ve ekipman kaldırma" },
+    { src: "/galeri/insaat-vinc-operasyon-2.webp",     title: "Şantiye Vinç Hizmeti",           category: "İnşaat",       desc: "Yüksek katlı inşaata malzeme aktarımı" },
+    { src: "/galeri/insaat-vinc-operasyon-3.webp",     title: "Çelik Konstrüksiyon Montajı",    category: "İnşaat",       desc: "Çelik çatı ve kolon parçalarının montajı" },
+    { src: "/galeri/insaat-vinc-operasyon-4.webp",     title: "Prefabrik Eleman Montajı",       category: "İnşaat",       desc: "Prefabrik beton blokların yerleştirilmesi" },
+    { src: "/galeri/konteyner-tasima.webp",            title: "Konteyner İndirme & Taşıma",     category: "Taşıma",       desc: "Şantiye konteynerinin araca yüklenmesi ve nakliyesi" },
+    { src: "/galeri/kuyu-sondaj-ekipman-indirme.webp", title: "Sondaj Ekipmanı İndirme",        category: "Sanayi",       desc: "Derin kuyu sondaj borularının ve motorunun montajı" },
+    { src: "/galeri/sanayi-boru-indirme-1.webp",       title: "Sanayi Borusu İndirme",          category: "Sanayi",       desc: "Büyük çaplı çelik sanayi borularının indirilmesi" },
+    { src: "/galeri/sanayi-boru-indirme-2.webp",       title: "Boru Montaj Operasyonu",         category: "Sanayi",       desc: "Fabrika hattı için boruların hassas yerleşimi" },
+    { src: "/galeri/trafo-indirme.webp",               title: "Elektrik Trafosu İndirme",       category: "Sanayi",       desc: "Yüksek gerilim trafosunun kaideye oturtulması" },
   ];
 
-  const categories = ["Tümü", "Hiab Vinç", "İnşaat", "Sanayi", "Acil Hizmet"];
-  const filteredItems = activeFilter === "Tümü" ? galleryItems : galleryItems.filter(i => i.category === activeFilter);
+  const categories = ["Tümü", "Sanayi", "Kurtarma", "İnşaat", "Taşıma"];
+  const filteredItems = activeFilter === "Tümü"
+    ? galleryItems
+    : galleryItems.filter(item => item.category === activeFilter);
 
-  const openLightbox = (index: number) => {
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-    document.body.style.overflow = "hidden";
-  };
-
-  const closeLightbox = useCallback(() => {
-    setLightboxOpen(false);
-    document.body.style.overflow = "";
-  }, []);
-
-  const prevImage = useCallback(() => {
-    setLightboxIndex(i => (i - 1 + filteredItems.length) % filteredItems.length);
-  }, [filteredItems.length]);
-
-  const nextImage = useCallback(() => {
-    setLightboxIndex(i => (i + 1) % filteredItems.length);
-  }, [filteredItems.length]);
+  const openLightbox = (index: number) => { setLightboxIndex(index); setLightboxOpen(true); };
+  const closeLightbox = () => { setLightboxOpen(false); };
+  const nextImage = useCallback(() => { setLightboxIndex((prev) => (prev + 1) % filteredItems.length); }, [filteredItems.length]);
+  const prevImage = useCallback(() => { setLightboxIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length); }, [filteredItems.length]);
 
   useEffect(() => {
     if (!lightboxOpen) return;
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") prevImage();
       if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
@@ -103,6 +90,7 @@ export default function Home() {
             <div className="hidden md:flex items-center gap-7">
               <button onClick={() => scrollToSection("anasayfa")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Ana Sayfa</button>
               <button onClick={() => scrollToSection("hizmetler")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Hizmetlerimiz</button>
+              <button onClick={() => scrollToSection("filo")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Filomuz</button>
               <button onClick={() => scrollToSection("calismalar")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Çalışmalarımız</button>
               <button onClick={() => scrollToSection("bolgeler")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Bölgelerimiz</button>
               <button onClick={() => scrollToSection("hakkimizda")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Hakkımızda</button>
@@ -129,19 +117,30 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-white">
               <div className="inline-block mb-6 px-4 py-2 bg-orange-600/20 border border-orange-500/50 rounded-full">
-                <span className="text-orange-300 text-sm font-semibold">Profesyonel Vinç Hizmetleri</span>
+                <span className="text-orange-300 text-sm font-semibold">Salihli & Manisa 7/24 Vinç Hizmetleri</span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Güvenilir <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">Vinç</span> Kiralama
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Salihli, Alaşehir, Kula ve Demirci bölgesinde 24/7 profesyonel vinç kiralama hizmetleri. Deneyimli ekibimiz ve modern ekipmanlarımızla her türlü yükleme ve taşıma ihtiyacınıza çözüm sunuyoruz.
+                Salihli, Ahmetli, Alaşehir, Kula ve Demirci bölgesinde 55 tonluk Hiab, sepetli vinç ve kaza kurtarma filomuzla 7/24 kesintisiz hizmetinizdeyiz.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href="tel:05444513341" onClick={trackCall}>
-                  <Button size="lg" className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white w-full sm:w-auto shadow-lg">
+                <a href="tel:05444513341" onClick={trackCall} className="w-full sm:w-auto">
+                  <Button size="lg" className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white w-full shadow-lg">
                     <Phone className="h-5 w-5 mr-2" />
                     0544 451 33 41
+                  </Button>
+                </a>
+                <a
+                  href="https://wa.me/905444513341?text=Merhaba%2C%20Araz%20Vin%C3%A7%27ten%20vin%C3%A7%20kiralama%20veya%20kurtarma%20hakk%C4%B1nda%20bilgi%20ve%20fiyat%20almak%20istiyorum."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
+                >
+                  <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white w-full shadow-lg border border-emerald-500/30">
+                    <MessageCircle className="h-5 w-5 mr-2" />
+                    WhatsApp ile Yazın
                   </Button>
                 </a>
                 <Button size="lg" variant="outline" onClick={() => scrollToSection("hizmetler")} className="w-full sm:w-auto border-white text-white hover:bg-white/10">
@@ -216,6 +215,164 @@ export default function Home() {
                 </Card>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Makine Filomuz & Kapasitelerimiz */}
+      <section id="filo" className="py-24 bg-white border-y border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full">
+              <span className="text-orange-700 text-sm font-semibold flex items-center gap-1.5 justify-center">
+                <Wrench className="h-4 w-4" /> Makine Parkurumuz
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Filomuz & Teknik Kapasitelerimiz</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Her türlü ağır yük kaldırma, yüksek irtifa ve acil kurtarma operasyonuna tam uyumlu sertifikalı vinç filomuz
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Araç 1: 55 Ton Hiab */}
+            <div className="bg-gradient-to-b from-gray-50 to-white border-2 border-orange-200 hover:border-orange-500 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative group">
+              <div className="absolute -top-3.5 left-8 bg-orange-600 text-white text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                Ağır Sanayi & Kurtarma
+              </div>
+              <div>
+                <div className="h-14 w-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 text-orange-600 group-hover:scale-110 transition-transform">
+                  <Truck className="h-7 w-7" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">55 Tonluk Hiab Vinç</h3>
+                <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                  Katlanır bom yapısı ve yüksek hidrolik gücüyle Salihli ve çevre ilçelerin en güçlü ağır yük ve kurtarma makinesi.
+                </p>
+
+                <div className="space-y-3 border-t border-gray-100 pt-6 mb-6">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Kaldırma Kapasitesi:</span>
+                    <span className="font-bold text-gray-900 bg-orange-50 px-2.5 py-0.5 rounded-md border border-orange-100">55 Ton</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Bom Uzanma Mesafesi:</span>
+                    <span className="font-bold text-gray-900">30+ Metre</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Öne Çıkan Özellik:</span>
+                    <span className="font-bold text-gray-900">Katlanır Hidrolik Bom</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Kullanım Alanı:</span>
+                    <span className="font-semibold text-orange-600">Makine, Trafo & Kamyon Kurtarma</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-gray-100 flex gap-2">
+                <a href="/agir-vasita-kurtarma-salihli" className="flex-1">
+                  <Button variant="outline" className="w-full border-orange-200 text-orange-700 hover:bg-orange-50 font-semibold text-xs">
+                    Kurtarma Sayfası
+                  </Button>
+                </a>
+                <a href="tel:05444513341" onClick={trackCall} className="flex-1">
+                  <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-md">
+                    <Phone className="h-3.5 w-3.5 mr-1" /> Ara
+                  </Button>
+                </a>
+              </div>
+            </div>
+
+            {/* Araç 2: Sepetli Vinç */}
+            <div className="bg-gradient-to-b from-orange-50/60 to-white border-2 border-orange-500 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative group transform md:-translate-y-2">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-orange-600 to-amber-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md flex items-center gap-1">
+                <Sparkles className="h-3.5 w-3.5" /> Çok Talep Edilen
+              </div>
+              <div>
+                <div className="h-14 w-14 bg-orange-600 text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
+                  <Building className="h-7 w-7" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Sepetli Platform Vinç</h3>
+                <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                  Dış cephe, çatı, tabela ve yüksek irtifa işlerinde iskele kurma zahmetini bitiren hızlı ve güvenli platform.
+                </p>
+
+                <div className="space-y-3 border-t border-orange-100 pt-6 mb-6">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Çalışma Yüksekliği:</span>
+                    <span className="font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200">20–30 Metre</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Sepet Taşıma Kapasitesi:</span>
+                    <span className="font-bold text-gray-900">2 Kişi + Malzeme (300 Kg)</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">İSG Güvenliği:</span>
+                    <span className="font-bold text-emerald-700">Tam Emniyet Kilitli Sepet</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Kullanım Alanı:</span>
+                    <span className="font-semibold text-orange-600">Tabela, Cam Silme, Çatı & Budama</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-orange-100 flex gap-2">
+                <a href="/sepetli-vinc-kiralama-salihli" className="flex-1">
+                  <Button className="w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 text-white font-bold text-xs shadow-md">
+                    Sepetli Vinç İncele →
+                  </Button>
+                </a>
+              </div>
+            </div>
+
+            {/* Araç 3: Mobil Vinç */}
+            <div className="bg-gradient-to-b from-gray-50 to-white border-2 border-orange-200 hover:border-orange-500 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative group">
+              <div className="absolute -top-3.5 left-8 bg-slate-800 text-white text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                Şantiye & Proje
+              </div>
+              <div>
+                <div className="h-14 w-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 text-orange-600 group-hover:scale-110 transition-transform">
+                  <Construction className="h-7 w-7" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Mobil Vinç & Nakliye</h3>
+                <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                  Şantiyelerde, prefabrik montajlarında ve sanayi sahalarında hızlı intikal ve hassas yükleme çözümleri.
+                </p>
+
+                <div className="space-y-3 border-t border-gray-100 pt-6 mb-6">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Kapasite Aralığı:</span>
+                    <span className="font-bold text-gray-900 bg-orange-50 px-2.5 py-0.5 rounded-md border border-orange-100">15 – 35 Ton</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Manevra Kabiliyeti:</span>
+                    <span className="font-bold text-gray-900">360° Hidrolik Dönüş</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Ulaşım Hızı:</span>
+                    <span className="font-bold text-emerald-700">15–30 Dk Sahada</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500 font-medium">Kullanım Alanı:</span>
+                    <span className="font-semibold text-orange-600">İnşaat, Prefabrik & Konteyner</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-gray-100 flex gap-2">
+                <a href="/mobil-vinc-kiralama-salihli" className="flex-1">
+                  <Button variant="outline" className="w-full border-orange-200 text-orange-700 hover:bg-orange-50 font-semibold text-xs">
+                    Mobil Vinç Detay
+                  </Button>
+                </a>
+                <a href="tel:05444513341" onClick={trackCall} className="flex-1">
+                  <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-md">
+                    <Phone className="h-3.5 w-3.5 mr-1" /> Ara
+                  </Button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -425,6 +582,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Google Haritalar 5 Yıldız & Müşteri Memnuniyeti */}
+      <section className="py-16 bg-gradient-to-r from-amber-500 via-orange-600 to-orange-700 text-white relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto bg-slate-950/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+              <div className="flex items-center gap-1.5 mb-3 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-6 w-6 fill-current" />
+                ))}
+                <span className="ml-2 font-black text-xl text-white">5.0 / 5.0</span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                Google Haritalarda Müşteri Memnuniyeti
+              </h2>
+              <p className="text-gray-300 text-sm max-w-xl leading-relaxed">
+                Salihli, Ahmetli, Alaşehir ve Kula'da gerçekleştirdiğimiz 1000'den fazla vinç ve ağır vasıta kurtarma operasyonunda önceliğimiz her zaman can ve mal güvenliği oldu.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row md:flex-col gap-3 flex-shrink-0 w-full md:w-auto">
+              <a
+                href="https://share.google/7Q93yOqhkBwySCRYO"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Button size="lg" className="w-full bg-white hover:bg-gray-100 text-gray-900 font-bold shadow-lg flex items-center justify-center gap-2">
+                  <Star className="h-4 w-4 text-amber-500 fill-current" />
+                  Google'da Yorum Yap / İncele
+                </Button>
+              </a>
+              <a
+                href="https://wa.me/905444513341?text=Merhaba%2C%20Araz%20Vin%C3%A7%27ten%20vin%C3%A7%20kiralama%20veya%20kurtarma%20hakk%C4%B1nda%20bilgi%20ve%20fiyat%20almak%20istiyorum."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Button size="lg" variant="outline" className="w-full border-white/40 text-white hover:bg-white/10 font-semibold flex items-center justify-center gap-2">
+                  <MessageCircle className="h-4 w-4 text-emerald-400" />
+                  WhatsApp'tan Yazın
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="iletisim" className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -458,11 +661,22 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-          <div className="text-center">
-            <a href="tel:05444513341" onClick={trackCall}>
-              <Button size="lg" className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white shadow-lg">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="tel:05444513341" onClick={trackCall} className="w-full sm:w-auto">
+              <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white shadow-lg font-bold px-8">
                 <Phone className="h-5 w-5 mr-2" />
-                Hemen Arayın
+                Hemen Arayın: 0544 451 33 41
+              </Button>
+            </a>
+            <a
+              href="https://wa.me/905444513341?text=Merhaba%2C%20Araz%20Vin%C3%A7%27ten%20vin%C3%A7%20kiralama%20veya%20kurtarma%20hakk%C4%B1nda%20bilgi%20ve%20fiyat%20almak%20istiyorum."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              <Button size="lg" className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg font-bold px-8">
+                <MessageCircle className="h-5 w-5 mr-2" />
+                WhatsApp ile Mesaj Gönder
               </Button>
             </a>
           </div>

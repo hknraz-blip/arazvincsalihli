@@ -21,7 +21,7 @@ export default function MobileCallBar() {
       </a>
 
       <a
-        href="https://wa.me/905444513341?text=Merhaba,%20vin%C3%A7%20kiralama%20veya%20kurtarma%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+        href="https://wa.me/905444513341?text=Merhaba%2C%20Araz%20Vin%C3%A7%27ten%20vin%C3%A7%20kiralama%20veya%20kurtarma%20hakk%C4%B1nda%20bilgi%20ve%20fiyat%20almak%20istiyorum."
         target="_blank"
         rel="noopener noreferrer"
         className="flex-1 flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 px-3 rounded-xl text-sm transition-transform shadow-lg shadow-emerald-950/30 active:scale-95 flex-shrink-0"

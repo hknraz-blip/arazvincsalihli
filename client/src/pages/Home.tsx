@@ -24,27 +24,27 @@ export default function Home() {
   const [activeFilter, setActiveFilter] = useState("Tümü");
 
   const galleryItems = [
-    { src: "/galeri/beton-kosk-montaj-1.jpg",         title: "Beton Köşk Montajı",             category: "Sanayi",       desc: "Beton trafo köşkünün inşaat sahasına indirilmesi ve montajı" },
-    { src: "/galeri/beton-kosk-montaj-2.jpg",         title: "Beton Köşk Yerleştirme",         category: "Sanayi",       desc: "Beton köşk montaj operasyonunun tamamlanması" },
-    { src: "/galeri/beton-kosk-montaj-3.jpg",         title: "Beton Köşk İndirme",             category: "Sanayi",       desc: "Büyük beton köşkün araçtan indirilme işlemi" },
-    { src: "/galeri/beton-kosk-indirme.jpg",          title: "Köşk İndirme Operasyonu",        category: "Sanayi",       desc: "Hiab vinç ile beton köşk indirme ve konumlama" },
-    { src: "/galeri/cati-malzemesi-cikarma-1.jpg",    title: "Çatı Malzemesi Çıkarma",         category: "Hiab Vinç",    desc: "Yüksek binada çatı malzemelerinin vinç ile çıkarılması" },
-    { src: "/galeri/cati-malzemesi-cikarma-2.jpg",    title: "Çatı Malzemesi Kaldırma",        category: "Hiab Vinç",    desc: "Çok katlı binada çatı malzemesi kaldırma operasyonu" },
-    { src: "/galeri/celik-konstruksiyon-1.jpg",       title: "Çelik Konstrüksiyon Montajı",    category: "İnşaat",       desc: "Fabrika inşaatında çelik konstrüksiyon elemanlarının montajı" },
-    { src: "/galeri/celik-konstruksiyon-2.jpg",       title: "Çelik Yapı Montajı",             category: "İnşaat",       desc: "Endüstriyel yapıda çelik kolon ve kiriş montaj çalışması" },
-    { src: "/galeri/damperli-kamyon-kurtarma-1.jpg",  title: "Damperli Kamyon Kurtarma",       category: "Acil Hizmet",  desc: "Karayolunda devrilmiş damperli kamyonun kurtarılması" },
-    { src: "/galeri/damperli-kamyon-kurtarma-2.jpg",  title: "Kamyon Kurtarma Operasyonu",     category: "Acil Hizmet",  desc: "Devrilmiş damperli kamyonun vinç ile kaldırılarak tahliyesi" },
-    { src: "/galeri/dorse-kurtarma.jpg",              title: "Dorse Kurtarma",                 category: "Acil Hizmet",  desc: "Yoldan çıkmış dorsenin kurtarma ve tahliye operasyonu" },
-    { src: "/galeri/enjeksiyon-makinasi-indirme.jpg", title: "Enjeksiyon Makinası İndirme",   category: "Sanayi",       desc: "Ağır enjeksiyon makinesinin araçtan indirilmesi" },
-    { src: "/galeri/foseptik-deposu-1.jpg",           title: "Foseptik Deposu Montajı",        category: "İnşaat",       desc: "Büyük foseptik deposunun zemine yerleştirilmesi" },
-    { src: "/galeri/foseptik-deposu-2.jpg",           title: "Foseptik Depo Yerleştirme",      category: "İnşaat",       desc: "Foseptik deposunun hassas konumlandırma operasyonu" },
-    { src: "/galeri/grayder-kurtarma-1.jpg",          title: "Grayder Kurtarma",               category: "Acil Hizmet",  desc: "Ormanlık arazide sıkışan graydernın kurtarılması" },
-    { src: "/galeri/grayder-kurtarma-2.jpg",          title: "İş Makinesi Kurtarma",           category: "Acil Hizmet",  desc: "Zorlu arazide mahsur kalan iş makinesinin kurtarma operasyonu" },
-    { src: "/galeri/tunel-makina-montaji-1.jpg",      title: "Tünel Makina Montajı",           category: "İnşaat",       desc: "Tünel inşaatında makina ve ekipman montaj çalışması" },
-    { src: "/galeri/tunel-makina-montaji-2.jpg",      title: "Tünel Ekipman Yerleştirme",      category: "İnşaat",       desc: "Tünel projesinde ağır makina konumlama operasyonu" },
-    { src: "/galeri/tunel-beton-mikseri-1.jpg",       title: "Tünelde Beton Mikseri Kurtarma", category: "Acil Hizmet",  desc: "Tünel içinde devrilmiş beton mikserinin kurtarılması" },
-    { src: "/galeri/tunel-beton-mikseri-2.jpg",       title: "Tünel İçi Kurtarma",             category: "Acil Hizmet",  desc: "Tünel içindeki araç kurtarma ve tahliye operasyonu" },
-    { src: "/galeri/prefabrik-beton-kosk.jpeg",       title: "Prefabrik Beton Köşk Montajı",   category: "Sanayi",       desc: "Prefabrik beton köşkün vinç ile montaj ve yerleştirme operasyonu" },
+    { src: "/galeri/beton-kosk-montaj-1.webp",         title: "Beton Köşk Montajı",             category: "Sanayi",       desc: "Beton trafo köşkünün inşaat sahasına indirilmesi ve montajı" },
+    { src: "/galeri/beton-kosk-montaj-2.webp",         title: "Beton Köşk Yerleştirme",         category: "Sanayi",       desc: "Beton köşk montaj operasyonunun tamamlanması" },
+    { src: "/galeri/beton-kosk-montaj-3.webp",         title: "Beton Köşk İndirme",             category: "Sanayi",       desc: "Büyük beton köşkün araçtan indirilme işlemi" },
+    { src: "/galeri/beton-kosk-indirme.webp",          title: "Köşk İndirme Operasyonu",        category: "Sanayi",       desc: "Hiab vinç ile beton köşk indirme ve konumlama" },
+    { src: "/galeri/cati-malzemesi-cikarma-1.webp",    title: "Çatı Malzemesi Çıkarma",         category: "Hiab Vinç",    desc: "Yüksek binada çatı malzemelerinin vinç ile çıkarılması" },
+    { src: "/galeri/cati-malzemesi-cikarma-2.webp",    title: "Çatı Malzemesi Kaldırma",        category: "Hiab Vinç",    desc: "Çok katlı binada çatı malzemesi kaldırma operasyonu" },
+    { src: "/galeri/celik-konstruksiyon-1.webp",       title: "Çelik Konstrüksiyon Montajı",    category: "İnşaat",       desc: "Fabrika inşaatında çelik konstrüksiyon elemanlarının montajı" },
+    { src: "/galeri/celik-konstruksiyon-2.webp",       title: "Çelik Yapı Montajı",             category: "İnşaat",       desc: "Endüstriyel yapıda çelik kolon ve kiriş montaj çalışması" },
+    { src: "/galeri/damperli-kamyon-kurtarma-1.webp",  title: "Damperli Kamyon Kurtarma",       category: "Acil Hizmet",  desc: "Karayolunda devrilmiş damperli kamyonun kurtarılması" },
+    { src: "/galeri/damperli-kamyon-kurtarma-2.webp",  title: "Kamyon Kurtarma Operasyonu",     category: "Acil Hizmet",  desc: "Devrilmiş damperli kamyonun vinç ile kaldırılarak tahliyesi" },
+    { src: "/galeri/dorse-kurtarma.webp",              title: "Dorse Kurtarma",                 category: "Acil Hizmet",  desc: "Yoldan çıkmış dorsenin kurtarma ve tahliye operasyonu" },
+    { src: "/galeri/enjeksiyon-makinasi-indirme.webp", title: "Enjeksiyon Makinası İndirme",   category: "Sanayi",       desc: "Ağır enjeksiyon makinesinin araçtan indirilmesi" },
+    { src: "/galeri/foseptik-deposu-1.webp",           title: "Foseptik Deposu Montajı",        category: "İnşaat",       desc: "Büyük foseptik deposunun zemine yerleştirilmesi" },
+    { src: "/galeri/foseptik-deposu-2.webp",           title: "Foseptik Depo Yerleştirme",      category: "İnşaat",       desc: "Foseptik deposunun hassas konumlandırma operasyonu" },
+    { src: "/galeri/grayder-kurtarma-1.webp",          title: "Grayder Kurtarma",               category: "Acil Hizmet",  desc: "Ormanlık arazide sıkışan graydernın kurtarılması" },
+    { src: "/galeri/grayder-kurtarma-2.webp",          title: "İş Makinesi Kurtarma",           category: "Acil Hizmet",  desc: "Zorlu arazide mahsur kalan iş makinesinin kurtarma operasyonu" },
+    { src: "/galeri/tunel-makina-montaji-1.webp",      title: "Tünel Makina Montajı",           category: "İnşaat",       desc: "Tünel inşaatında makina ve ekipman montaj çalışması" },
+    { src: "/galeri/tunel-makina-montaji-2.webp",      title: "Tünel Ekipman Yerleştirme",      category: "İnşaat",       desc: "Tünel projesinde ağır makina konumlama operasyonu" },
+    { src: "/galeri/tunel-beton-mikseri-1.webp",       title: "Tünelde Beton Mikseri Kurtarma", category: "Acil Hizmet",  desc: "Tünel içinde devrilmiş beton mikserinin kurtarılması" },
+    { src: "/galeri/tunel-beton-mikseri-2.webp",       title: "Tünel İçi Kurtarma",             category: "Acil Hizmet",  desc: "Tünel içindeki araç kurtarma ve tahliye operasyonu" },
+    { src: "/galeri/prefabrik-beton-kosk.webp",        title: "Prefabrik Beton Köşk Montajı",   category: "Sanayi",       desc: "Prefabrik beton köşkün vinç ile montaj ve yerleştirme operasyonu" },
   ];
 
   const categories = ["Tümü", "Hiab Vinç", "İnşaat", "Sanayi", "Acil Hizmet"];
@@ -98,7 +98,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-25 w-auto object-contain" />
+              <img src="/araz-vinc-logo.webp" alt="Araz Vinç" className="h-25 w-auto object-contain" width="150" height="100" />
             </div>
             <div className="hidden md:flex items-center gap-7">
               <button onClick={() => scrollToSection("anasayfa")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Ana Sayfa</button>
@@ -162,7 +162,7 @@ export default function Home() {
             </div>
             <div className="relative h-96 md:h-full">
               <div className="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent rounded-2xl"></div>
-              <img src="/araz-vinc-machine.jpg" alt="Araz Vinç Makinası" className="rounded-2xl shadow-2xl w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <img src="/araz-vinc-machine.webp" alt="Araz Vinç Makinası" className="rounded-2xl shadow-2xl w-full h-full object-cover hover:scale-105 transition-transform duration-500" fetchPriority="high" />
             </div>
           </div>
         </div>
@@ -243,7 +243,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item, idx) => (
               <div key={idx} className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer aspect-[4/3]" onClick={() => openLightbox(idx)}>
-                <img src={item.src} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={item.src} alt={item.title} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="flex items-start justify-between">
@@ -298,7 +298,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-orange-600 to-orange-400 rounded-2xl opacity-10 blur-2xl"></div>
-              <img src="/araz-vinc-machine.jpg" alt="Araz Vinç Çalışma Alanı" className="rounded-2xl shadow-2xl w-full h-auto object-cover relative" />
+              <img src="/araz-vinc-machine.webp" alt="Araz Vinç Çalışma Alanı" loading="lazy" decoding="async" className="rounded-2xl shadow-2xl w-full h-auto object-cover relative" />
             </div>
             <div>
               <div className="inline-block mb-6 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full">
@@ -473,7 +473,7 @@ export default function Home() {
             {/* Sütun 1: Marka & Açıklama */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src="/araz-vinc-logo.png" alt="Araz Vinç Salihli" className="h-16 w-auto object-contain" />
+                <img src="/araz-vinc-logo.webp" alt="Araz Vinç Salihli" loading="lazy" decoding="async" className="h-16 w-auto object-contain" width="120" height="80" />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Salihli merkezli 55 tonluk Hiab ve mobil vinç filomuzla Manisa ve çevre ilçelerde 7/24 güvenli, sigortalı ağır yük kaldırma, makine montajı ve acil kurtarma hizmeti sunuyoruz.

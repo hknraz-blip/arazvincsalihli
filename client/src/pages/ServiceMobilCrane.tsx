@@ -65,7 +65,7 @@ export default function ServiceMobilCrane() {
               </div>
             </div>
             <div className="relative h-72 md:h-full">
-              <img src="/araz-vinc-machine.jpg" alt="Salihli Mobil Vinç Kiralama – Araz Vinç" className="rounded-2xl shadow-2xl w-full h-full object-cover" />
+              <img src="/araz-vinc-machine.webp" alt="Salihli Mobil Vinç Kiralama – Araz Vinç" loading="lazy" decoding="async" className="rounded-2xl shadow-2xl w-full h-full object-cover" />
             </div>
           </div>
         </div>

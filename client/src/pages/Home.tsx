@@ -160,9 +160,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative h-96 md:h-full">
-              <div className="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent rounded-2xl"></div>
-              <img src="/araz-vinc-machine.webp" alt="Araz Vinç Makinası" className="rounded-2xl shadow-2xl w-full h-full object-cover hover:scale-105 transition-transform duration-500" fetchPriority="high" />
+            <div className="relative h-96 md:h-full flex items-center justify-center">
+              <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl border border-slate-700/50 bg-slate-900">
+                <img
+                  src="/araz-vinc-machine.webp"
+                  alt="Araz Vinç 55 Tonluk Hiab ve Mobil Vinç"
+                  className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-500"
+                  fetchPriority="high"
+                />
+              </div>
             </div>
           </div>
         </div>

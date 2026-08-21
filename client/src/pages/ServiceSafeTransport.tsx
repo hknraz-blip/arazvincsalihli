@@ -10,8 +10,8 @@ const trackCall = () => { if (typeof gtagSendEvent === 'function') gtagSendEvent
 export default function ServiceSafeTransport() {
   const [, navigate] = useLocation();
   useSEO({
-    title: "Güvenli Yük Taşıma Salihli | Sigortalı Vinç | Araz Vinç",
-    description: "Salihli ve çevresinde sigortalı, güvenli ağır yük taşıma ve vinç hizmetleri. Sertifikalı operatörler, modern ekipman. Ücretsiz teklif: 0544 451 33 41",
+    title: "Güvenli Yük Taşıma Salihli | Profesyonel Vinç | Araz Vinç",
+    description: "Salihli ve Manisa çevresinde profesyonel, güvenli ağır yük taşıma ve vinç hizmetleri. G sınıfı sertifikalı operatörler, modern ekipman. Tel: 0544 451 33 41",
     canonical: "https://arazvincsalihli.com/guvenli-tasima-salihli",
   });
 
@@ -23,7 +23,7 @@ export default function ServiceSafeTransport() {
         "name": "Güvenli Yük Taşıma Hizmeti",
         "provider": { "@type": "LocalBusiness", "name": "Araz Vinç Salihli", "telephone": "+905444513341", "url": "https://arazvincsalihli.com" },
         "areaServed": ["Salihli", "Alaşehir", "Kula", "Demirci", "Köprübaşı", "Sarıgöl", "Ahmetli"],
-        "description": "Salihli ve Manisa çevresinde sigortalı ve sertifikalı güvenli ağır yük taşıma ve vinç operasyonları.",
+        "description": "Salihli ve Manisa çevresinde sertifikalı operatörler ve titiz mühendislik hesaplarıyla güvenli ağır yük taşıma ve vinç operasyonları.",
         "url": "https://arazvincsalihli.com/guvenli-tasima-salihli",
       })}} />
 
@@ -53,7 +53,7 @@ export default function ServiceSafeTransport() {
               Güvenli <span className="text-transparent bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text">Yük Taşıma</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Sigortalı ve sertifikalı ekibimizle her türlü ağır yükü, fabrikayı, inşaat malzemesini ve sanayi ekipmanını en yüksek güvenlik standartlarında taşıyoruz. Salihli ve çevre ilçelerde 7/24 hizmet.
+              G sınıfı sertifikalı ekibimizle her türlü ağır yükü, fabrikayı, inşaat malzemesini ve sanayi ekipmanını en yüksek güvenlik standartlarında taşıyoruz. Salihli ve çevre ilçelerde 7/24 hizmet.
             </p>
             <a href="tel:05444513341" onClick={trackCall}>
               <Button size="lg" className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white shadow-lg">
@@ -70,10 +70,10 @@ export default function ServiceSafeTransport() {
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Hizmet Standartlarımız</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Shield, t: "Tam Sigortalı Taşıma", d: "Tüm taşıma ve kaldırma operasyonlarımız kapsamlı emtia ve kaza sigortası altındadır." },
-              { icon: CheckCircle, t: "Sertifikalı Operatörler", d: "Operatörlerimizin tamamı G sınıfı sürücü belgesine ve mesleki yeterlilik belgelerine sahiptir." },
+              { icon: Shield, t: "Sıfır Hasar Prensibi", d: "Özel polyester sapanlar ve hassas hidrolik kontrol ile yüklerinize çizik dahi gelmeden operasyon." },
+              { icon: CheckCircle, t: "Sertifikalı Operatörler", d: "Operatörlerimizin tamamı G sınıfı vinç sürücü belgesine ve mesleki yeterlilik belgelerine sahiptir." },
               { icon: Zap, t: "7/24 Kesintisiz Hizmet", d: "Gece, hafta sonu veya resmi tatil fark etmeksizin acil taşıma ihtiyaçlarınızda hazırız." },
-              { icon: AlertCircle, t: "Saha Risk Analizi", d: "Her kaldırma öncesinde zemin, rüzgar ve yük merkezi hesaplanarak sıfır risk hedeflenir." }
+              { icon: AlertCircle, t: "Saha Risk Analizi", d: "Her kaldırma öncesinde zemin, rüzgar ve yük merkezi hesaplanarak emniyet sağlanır." }
             ].map(({ icon: Icon, t, d }) => (
               <Card key={t} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">

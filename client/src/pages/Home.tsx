@@ -22,6 +22,11 @@ export default function Home() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState("Tümü");
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (idx: number) => {
+    setOpenFaq(openFaq === idx ? null : idx);
+  };
 
   const galleryItems = [
     { src: "/galeri/beton-kosk-montaj-1.webp",         title: "Beton Köşk Montajı",             category: "Sanayi",       desc: "Beton trafo köşkünün inşaat sahasına indirilmesi ve montajı" },
@@ -94,6 +99,7 @@ export default function Home() {
               <button onClick={() => scrollToSection("filo")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Filomuz</button>
               <button onClick={() => scrollToSection("calismalar")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Çalışmalarımız</button>
               <button onClick={() => scrollToSection("bolgeler")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Bölgelerimiz</button>
+              <button onClick={() => scrollToSection("sss")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">SSS</button>
               <button onClick={() => scrollToSection("hakkimizda")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Hakkımızda</button>
               <button onClick={() => scrollToSection("iletisim")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">İletişim</button>
               <a href="/blog" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Blog</a>
@@ -174,14 +180,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-12 bg-gradient-to-r from-orange-600 to-orange-700">
+      {/* Stats / Güven Rozetleri */}
+      <section className="py-10 bg-gradient-to-r from-orange-600 to-orange-700">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[{v:"7/24",l:"Kesintisiz Hizmet"},{v:"%100",l:"Müşteri Memnuniyeti"},{v:"25+",l:"Yıl Deneyim"},{v:"1000+",l:"Başarılı Proje"}].map(({v,l})=>(
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { v: "G Sınıfı", l: "Sertifikalı Operatörler" },
+              { v: "55T & 25M", l: "Hiab & Sepetli Parkur" },
+              { v: "15–30 Dk", l: "Hızlı İntikal Süresi" },
+              { v: "Faturalı", l: "7/24 Kurumsal Hizmet" },
+            ].map(({ v, l }) => (
               <div key={l} className="text-center text-white">
-                <div className="text-4xl font-bold mb-2">{v}</div>
-                <div className="text-orange-100">{l}</div>
+                <div className="text-3xl md:text-4xl font-black mb-1 tracking-tight">{v}</div>
+                <div className="text-orange-100 text-xs md:text-sm font-medium">{l}</div>
               </div>
             ))}
           </div>
@@ -197,12 +208,12 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Truck,        title: "Mobil Vinç Kiralama",      desc: "10 tondan 55 tona kadar farklı kapasitelerde mobil vinç kiralama. Yükleme, indirme ve hassas montaj.", href: "/mobil-vinc-kiralama-salihli" },
-              { icon: Building,     title: "Sepetli Vinç Kiralama",     desc: "Dış cephe, cam silme, tabela montajı, çatı tamiri ve ağaç budama için güvenli platform vinç.", href: "/sepetli-vinc-kiralama-salihli" },
+              { icon: Truck,        title: "Mobil Vinç Kiralama",      desc: "10 tondan 55 tona kadar mobil vinç kiralama. Yükleme, indirme, montaj ve nakliye.", href: "/mobil-vinc-kiralama-salihli" },
+              { icon: Building,     title: "Sepetli Vinç Kiralama",     desc: "25 metre çalışma yüksekliğiyle dış cephe, tabela, cam silme, çatı ve ağaç budama platformu.", href: "/sepetli-vinc-kiralama-salihli" },
               { icon: Construction, title: "İnşaat Projeleri",          desc: "İnşaat sahalarında prefabrik montaj, demir-beton taşıma ve çelik konstrüksiyon çözümleri.", href: "/insaat-vinc-kiralama-salihli" },
               { icon: Truck,        title: "Sanayi Taşımacılığı",       desc: "OSB ve fabrikalarda ağır sanayi makineleri, trafo ve tesis ekipmanlarının nakliyesi.", href: "/sanayi-vinc-kiralama-salihli" },
-              { icon: Shield,       title: "Güvenli Taşıma",            desc: "Deneyimli operatörler ve tam kapsamlı sigorta güvencesiyle sıfır riskli yük taşıma.", href: "/guvenli-tasima-salihli" },
-              { icon: Clock,        title: "7/24 Acil Hizmet",          desc: "Gece gündüz, hafta sonu kesintisiz vinç desteği ve karayolu acil kurtarma operasyonları.", href: "/acil-vinc-hizmeti-salihli" },
+              { icon: Shield,       title: "Güvenli Yük Taşıma",        desc: "G sınıfı sertifikalı deneyimli operatörler ve titiz planlamayla sıfır hasarlı taşıma.", href: "/guvenli-tasima-salihli" },
+              { icon: Clock,        title: "7/24 Acil Vinç Hizmeti",    desc: "Gece gündüz, hafta sonu kesintisiz vinç desteği ve karayolu acil kurtarma operasyonları.", href: "/acil-vinc-hizmeti-salihli" },
             ].map((s, idx) => (
               <a key={idx} href={s.href} className="group block h-full">
                 <Card className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 h-full flex flex-col justify-between group-hover:ring-2 group-hover:ring-orange-500/30">
@@ -307,7 +318,7 @@ export default function Home() {
                 <div className="space-y-3 border-t border-orange-100 pt-6 mb-6">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500 font-medium">Çalışma Yüksekliği:</span>
-                    <span className="font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200">20–30 Metre</span>
+                    <span className="font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200">25 Metre</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500 font-medium">Sepet Taşıma Kapasitesi:</span>
@@ -631,6 +642,94 @@ export default function Home() {
                 </Button>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Acil Durumda WhatsApp Canlı Konum Paylaşımı */}
+      <section className="py-12 bg-emerald-950/40 border-y border-emerald-800/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="bg-gradient-to-r from-emerald-900 via-slate-900 to-emerald-950 rounded-3xl p-8 md:p-10 border border-emerald-500/30 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 text-white text-center md:text-left">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-xs font-bold mb-3 border border-emerald-500/30">
+                <MapPin className="h-3.5 w-3.5" /> Hızlı İntikal Kolaylığı
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">Acil Durumda Canlı Konum Paylaşın</h3>
+              <p className="text-gray-300 text-sm max-w-lg leading-relaxed">
+                Adres tarif etmekle vakit kaybetmeyin. WhatsApp'tan canlı konumunuzu atın, en yakın vincimizi hemen yönlendirelim.
+              </p>
+            </div>
+            <a
+              href="https://wa.me/905444513341?text=Acil%20vin%C3%A7%20%2F%20kurtarma%20hizmetine%20ihtiyac%C4%B1m%20var.%20Konumumu%20payla%C5%9F%C4%B1yorum%3A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 w-full md:w-auto"
+            >
+              <Button size="lg" className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold shadow-lg shadow-emerald-950/50 flex items-center justify-center gap-2 text-base px-6">
+                <MessageCircle className="h-5 w-5 fill-current" />
+                WhatsApp'tan Konum Gönder
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Sıkça Sorulan Sorular (SSS) */}
+      <section id="sss" className="py-24 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full">
+              <span className="text-orange-700 text-sm font-semibold">Merak Edilenler</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Sıkça Sorulan Sorular</h2>
+            <p className="text-base md:text-lg text-gray-600">Vinç kiralama ve kurtarma hizmetlerimiz hakkında en çok sorulan soruların cevapları</p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "Sepetli vinç ile kaç metreye kadar çalışabiliyorsunuz?",
+                a: "Salihli ve çevre ilçelerde 25 metre çalışma yüksekliğine sahip sepetli platform vincimizle tabela montajı, bina dış cephe boya & cam silme, çatı tamiri ve yüksek ağaç budama işlerini güvenle gerçekleştiriyoruz."
+              },
+              {
+                q: "Vinç kiralama ücretlerine operatör ve yakıt dahil mi?",
+                a: "Evet. Tüm vinç ve sepetli platform kiralama hizmetlerimiz G sınıfı sertifikalı deneyimli operatörümüz ve yakıt dahil olarak anahtar teslim sunulmaktadır. İş bitiminde sürpriz ek masraf çıkarılmaz."
+              },
+              {
+                q: "Salihli dışındaki çevre ilçelere (Ahmetli, Alaşehir, Kula vb.) ne kadar sürede varıyorsunuz?",
+                a: "Salihli merkez üssümüzden Ahmetli'ye ~15 dakika, Alaşehir ve Sarıgöl'e ~25-30 dakika, Kula'ya ~35 dakika, Demirci ve Köprübaşı'na ise yol durumuna göre en kısa sürede intikal ediyoruz."
+              },
+              {
+                q: "Devrilen kamyon, tır veya batan iş makinelerinde kurtarma nasıl yapılıyor?",
+                a: "55 tonluk güçlü Hiab vincimiz ve yumuşak dokulu özel polyester sapanlarımızla aracı şasisinden kavrayarak kaportaya veya mekanik aksama ilave zarar vermeden doğrultuyor ve güvenli alana alıyoruz. Şirketler için resmi faturalı hizmet sunuyoruz."
+              },
+              {
+                q: "En hızlı şekilde nasıl vinç kiralayabilir veya fiyat teklifi alabilirim?",
+                a: "0544 451 33 41 numaralı telefonumuzdan bizi arayarak veya WhatsApp üzerinden yapılacak işin türünü ve konumunu ileterek 1 dakika içinde net fiyat teklifi alabilirsiniz."
+              }
+            ].map((faq, idx) => (
+              <div
+                key={idx}
+                className="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-200 hover:border-orange-300 shadow-sm"
+              >
+                <button
+                  onClick={() => toggleFaq(idx)}
+                  className="w-full p-6 text-left font-bold text-gray-900 flex items-center justify-between gap-4 bg-gray-50/50 hover:bg-orange-50/40 transition-colors"
+                >
+                  <span className="text-base md:text-lg">{faq.q}</span>
+                  <ChevronDown
+                    className={`h-5 w-5 text-orange-600 flex-shrink-0 transition-transform duration-300 ${
+                      openFaq === idx ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {openFaq === idx && (
+                  <div className="p-6 pt-2 bg-white text-gray-600 text-sm md:text-base leading-relaxed border-t border-gray-100">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>

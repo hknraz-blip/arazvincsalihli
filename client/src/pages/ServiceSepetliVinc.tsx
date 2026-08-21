@@ -72,7 +72,7 @@ export default function ServiceSepetliVinc() {
             <div className="text-white">
               <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 bg-orange-600/20 border border-orange-500/40 rounded-full">
                 <Sparkles className="h-4 w-4 text-orange-400" />
-                <span className="text-orange-300 text-sm font-semibold">Yüksek İrtifa Güvenli Platform</span>
+                <span className="text-orange-300 text-sm font-semibold">25 Metre Yüksek İrtifa Güvenli Platform</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 Salihli <span className="text-transparent bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text">Sepetli Vinç</span> Kiralama

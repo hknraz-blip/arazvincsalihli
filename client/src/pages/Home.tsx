@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Instagram, Construction, Shield, Clock, Award, Truck, CheckCircle, Star, ArrowRight, ChevronDown, X, ChevronLeft, ChevronRight, ZoomIn, Building, MessageCircle, Wrench, Sparkles } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { useSEO } from "@/hooks/useSEO";
+import Logo from "@/components/Logo";
 
 // Google Ads dönüşüm takibi
 declare function gtagSendEvent(url: string): false;
@@ -84,9 +85,9 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300">
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between h-20">
-            <div className="flex items-center gap-3">
-              <img src="/araz-vinc-logo.webp" alt="Araz Vinç" className="h-25 w-auto object-contain" width="150" height="100" />
-            </div>
+            <a href="/" onClick={() => scrollToSection("anasayfa")} className="flex items-center gap-3 cursor-pointer">
+              <Logo variant="light" height={42} />
+            </a>
             <div className="hidden md:flex items-center gap-7">
               <button onClick={() => scrollToSection("anasayfa")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Ana Sayfa</button>
               <button onClick={() => scrollToSection("hizmetler")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Hizmetlerimiz</button>
@@ -690,7 +691,7 @@ export default function Home() {
             {/* Sütun 1: Marka & Açıklama */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src="/araz-vinc-logo.webp" alt="Araz Vinç Salihli" loading="lazy" decoding="async" className="h-16 w-auto object-contain" width="120" height="80" />
+                <Logo variant="dark" height={44} />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Salihli merkezli 55 tonluk Hiab ve mobil vinç filomuzla Manisa ve çevre ilçelerde 7/24 güvenli, sigortalı ağır yük kaldırma, makine montajı ve acil kurtarma hizmeti sunuyoruz.

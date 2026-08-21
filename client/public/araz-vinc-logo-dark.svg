@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="arazOrangeDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="arazShieldDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Logo İkonu -->
+  <g transform="translate(6, 5)">
+    <!-- Arka Zemin Geometrik Kalkan -->
+    <rect x="0" y="2" width="56" height="56" rx="14" fill="url(#arazShieldDark)" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Vinç Bomu -->
+    <path d="M12 46 L38 14 L46 14 L20 46 Z" fill="url(#arazOrangeDark)" />
+    
+    <!-- Çelik Pimler -->
+    <circle cx="16" cy="42" r="2.5" fill="#ffffff" />
+    <circle cx="42" cy="18" r="2.5" fill="#ffffff" />
+    
+    <!-- Halat & Kanca -->
+    <line x1="42" y1="20" x2="42" y2="30" stroke="#fb923c" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M42 30 C42 37 34 37 34 33 C34 30 38 30 38 33" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+
+  <!-- "ARAZ" -->
+  <text x="74" y="38" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="32" letter-spacing="1.5" fill="#ffffff">
+    ARAZ
+  </text>
+
+  <!-- "VİNÇ" -->
+  <text x="175" y="38" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="32" letter-spacing="1" fill="url(#arazOrangeDark)">
+    VİNÇ
+  </text>
+
+  <!-- Alt Başlık -->
+  <g transform="translate(75, 48)">
+    <rect x="0" y="0" width="70" height="15" rx="3.5" fill="#ea580c" fill-opacity="0.25" />
+    <text x="6" y="11" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="9" letter-spacing="1.2" fill="#fb923c">
+      SALİHLİ
+    </text>
+    
+    <text x="78" y="11" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="9" letter-spacing="1" fill="#94a3b8">
+      7/24 VİNÇ & KURTARMA
+    </text>
+  </g>
+</svg>

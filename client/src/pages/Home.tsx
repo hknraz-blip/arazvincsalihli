@@ -445,6 +445,9 @@ export default function Home() {
                 <div className="h-14 w-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-full flex items-center justify-center mx-auto mb-6"><MapPin className="h-7 w-7 text-orange-600" /></div>
                 <h3 className="font-bold text-gray-900 mb-3 text-lg">Adres</h3>
                 <p className="text-gray-600 font-medium">Abay Bulvarı No: 72<br />Salihli / Manisa</p>
+                <a href="https://maps.google.com/?q=Abay+Bulvarı+No:+72+Salihli+Manisa" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-xs font-bold text-orange-600 hover:underline">
+                  Yol Tarifi Al (Google Maps) →
+                </a>
               </CardContent>
             </Card>
             <Card className="text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0">
@@ -493,7 +496,8 @@ export default function Home() {
               <h4 className="font-bold text-white text-base mb-4 tracking-wide uppercase text-xs text-orange-400">Hizmetlerimiz</h4>
               <ul className="space-y-2.5 text-sm text-gray-400">
                 <li><a href="/mobil-vinc-kiralama-salihli" className="hover:text-orange-400 transition-colors">Mobil Vinç Kiralama</a></li>
-                <li><a href="/sepetli-vinc-kiralama-salihli" className="hover:text-orange-400 transition-colors font-medium text-gray-300">Sepetli Vinç Kiralama</a></li>
+                <li><a href="/sepetli-vinc-kiralama-salihli" className="hover:text-orange-400 transition-colors">Sepetli Vinç Kiralama</a></li>
+                <li><a href="/agir-vasita-kurtarma-salihli" className="hover:text-orange-400 transition-colors font-medium text-gray-300">Ağır Vasıta Kurtarma</a></li>
                 <li><a href="/insaat-vinc-kiralama-salihli" className="hover:text-orange-400 transition-colors">İnşaat Vinç Kiralama</a></li>
                 <li><a href="/sanayi-vinc-kiralama-salihli" className="hover:text-orange-400 transition-colors">Sanayi Taşımacılığı</a></li>
                 <li><a href="/guvenli-tasima-salihli" className="hover:text-orange-400 transition-colors">Güvenli Yük Taşıma</a></li>
@@ -518,11 +522,15 @@ export default function Home() {
             <div>
               <h4 className="font-bold text-white text-base mb-4 tracking-wide uppercase text-xs text-orange-400">İletişim & Konum</h4>
               <p className="text-gray-300 font-semibold mb-1">Araz Vinç Salihli</p>
-              <p className="text-gray-400 text-sm mb-3">Abay Bulvarı No: 72<br />Salihli / Manisa</p>
-              <a href="tel:05444513341" onClick={trackCall} className="inline-block text-orange-400 font-bold text-lg hover:text-orange-300 transition-colors mb-3">
+              <p className="text-gray-400 text-sm mb-2">Abay Bulvarı No: 72<br />Salihli / Manisa</p>
+              <a href="https://maps.google.com/?q=Abay+Bulvarı+No:+72+Salihli+Manisa" target="_blank" rel="noopener noreferrer" className="inline-block text-xs font-semibold text-orange-400 hover:underline mb-3">
+                📍 Haritada Aç (Google Maps) →
+              </a>
+              <br />
+              <a href="tel:05444513341" onClick={trackCall} className="inline-block text-orange-400 font-bold text-lg hover:text-orange-300 transition-colors mb-1">
                 0544 451 33 41
               </a>
-              <p className="text-xs text-gray-500">7/24 Kesintisiz Çağrı & Acil Yol Yardım</p>
+              <p className="text-xs text-gray-500">7/24 Kesintisiz Çağrı & Acil Kurtarma</p>
             </div>
           </div>
 

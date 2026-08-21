@@ -14,6 +14,7 @@ const Service24_7 = lazy(() => import("./pages/Service24_7"));
 const ServiceConstruction = lazy(() => import("./pages/ServiceConstruction"));
 const ServiceIndustrial = lazy(() => import("./pages/ServiceIndustrial"));
 const ServiceSepetliVinc = lazy(() => import("./pages/ServiceSepetliVinc"));
+const ServiceAgirVasitaKurtarma = lazy(() => import("./pages/ServiceAgirVasitaKurtarma"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogSalihliVincKiralama = lazy(() => import("./pages/BlogSalihliVincKiralama"));
 const BlogHiabVincNedir = lazy(() => import("./pages/BlogHiabVincNedir"));
@@ -35,6 +36,7 @@ function Router() {
         {/* Hizmet sayfaları */}
         <Route path="/mobil-vinc-kiralama-salihli" component={ServiceMobilCrane} />
         <Route path="/sepetli-vinc-kiralama-salihli" component={ServiceSepetliVinc} />
+        <Route path="/agir-vasita-kurtarma-salihli" component={ServiceAgirVasitaKurtarma} />
         <Route path="/insaat-vinc-kiralama-salihli" component={ServiceConstruction} />
         <Route path="/sanayi-vinc-kiralama-salihli" component={ServiceIndustrial} />
         <Route path="/guvenli-tasima-salihli" component={ServiceSafeTransport} />

@@ -24,6 +24,11 @@ const routeMeta: Record<string, { title: string; description: string; canonical:
     description: "Salihli, Alaşehir, Kula ve Ahmetli'de sepetli vinç ve platform kiralama. Dış cephe, tabela montajı, çatı tamiri, elektrik ve ağaç budama. Tel: 0544 451 33 41",
     canonical: "https://arazvincsalihli.com/sepetli-vinc-kiralama-salihli",
   },
+  "/agir-vasita-kurtarma-salihli": {
+    title: "Salihli Ağır Vasıta Kurtarma | Kamyon, Tır & İş Makinesi – Araz Vinç",
+    description: "Salihli, D300 karayolu, Alaşehir, Kula ve Ahmetli'de 7/24 devrilmiş kamyon, tır, dorse ve batmış iş makinesi vinçle kurtarma. Tel: 0544 451 33 41",
+    canonical: "https://arazvincsalihli.com/agir-vasita-kurtarma-salihli",
+  },
   "/insaat-vinc-kiralama-salihli": {
     title: "İnşaat Vinç Kiralama Salihli & Alaşehir | Araz Vinç",
     description: "Salihli ve Alaşehir inşaat projelerinde prefabrik montaj, demir-beton taşıma, çelik iskelet kurulumu. Profesyonel vinç. Tel: 0544 451 33 41",

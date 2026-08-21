@@ -303,8 +303,8 @@ export default function ServiceSepetliVinc() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
               { href: "/mobil-vinc-kiralama-salihli", t: "Mobil Vinç Kiralama" },
+              { href: "/agir-vasita-kurtarma-salihli", t: "Ağır Vasıta Kurtarma" },
               { href: "/insaat-vinc-kiralama-salihli", t: "İnşaat Vinç Kiralama" },
-              { href: "/sanayi-vinc-kiralama-salihli", t: "Sanayi Taşımacılığı" },
               { href: "/acil-vinc-hizmeti-salihli", t: "7/24 Acil Vinç" },
             ].map(({ href, t }) => (
               <a key={t} href={href} className="block p-4 border border-gray-200 rounded-xl hover:border-orange-400 hover:bg-orange-50 transition-all text-center font-medium text-gray-700 hover:text-orange-700">

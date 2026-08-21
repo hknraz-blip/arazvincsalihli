@@ -131,9 +131,9 @@ export default function Service24_7() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Diğer Hizmetlerimiz</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
+              { href: "/agir-vasita-kurtarma-salihli", t: "Ağır Vasıta Kurtarma" },
               { href: "/mobil-vinc-kiralama-salihli", t: "Mobil Vinç Kiralama" },
               { href: "/sepetli-vinc-kiralama-salihli", t: "Sepetli Vinç Kiralama" },
-              { href: "/insaat-vinc-kiralama-salihli", t: "İnşaat Vinç Kiralama" },
               { href: "/sanayi-vinc-kiralama-salihli", t: "Sanayi Taşımacılığı" },
             ].map(({ href, t }) => (
               <a key={t} href={href} className="block p-4 border border-gray-200 rounded-xl hover:border-orange-400 hover:bg-orange-50 transition-all text-center font-medium text-gray-700 hover:text-orange-700">

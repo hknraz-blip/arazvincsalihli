@@ -120,9 +120,10 @@ export default function ServiceIndustrial() {
       <section className="py-14 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Diğer Hizmetlerimiz</h2>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { href: "/mobil-vinc-kiralama-salihli", t: "Mobil Vinç Kiralama" },
+              { href: "/sepetli-vinc-kiralama-salihli", t: "Sepetli Vinç Kiralama" },
               { href: "/insaat-vinc-kiralama-salihli", t: "İnşaat Vinç Kiralama" },
               { href: "/acil-vinc-hizmeti-salihli", t: "7/24 Acil Hizmet" },
             ].map(({ href, t }) => (

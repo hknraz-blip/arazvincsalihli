@@ -13,6 +13,7 @@ const ServiceSafeTransport = lazy(() => import("./pages/ServiceSafeTransport"));
 const Service24_7 = lazy(() => import("./pages/Service24_7"));
 const ServiceConstruction = lazy(() => import("./pages/ServiceConstruction"));
 const ServiceIndustrial = lazy(() => import("./pages/ServiceIndustrial"));
+const ServiceSepetliVinc = lazy(() => import("./pages/ServiceSepetliVinc"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogSalihliVincKiralama = lazy(() => import("./pages/BlogSalihliVincKiralama"));
 const BlogHiabVincNedir = lazy(() => import("./pages/BlogHiabVincNedir"));
@@ -23,6 +24,7 @@ const LocationAlasehir = lazy(() => import("./pages/LocationAlasehir"));
 const LocationKula = lazy(() => import("./pages/LocationKula"));
 const LocationDemirci = lazy(() => import("./pages/LocationDemirci"));
 const LocationKoprubasiSarigol = lazy(() => import("./pages/LocationKoprubasiSarigol"));
+const LocationAhmetli = lazy(() => import("./pages/LocationAhmetli"));
 
 function Router() {
   return (
@@ -32,6 +34,7 @@ function Router() {
         <Route path="/files" component={FileManager} />
         {/* Hizmet sayfaları */}
         <Route path="/mobil-vinc-kiralama-salihli" component={ServiceMobilCrane} />
+        <Route path="/sepetli-vinc-kiralama-salihli" component={ServiceSepetliVinc} />
         <Route path="/insaat-vinc-kiralama-salihli" component={ServiceConstruction} />
         <Route path="/sanayi-vinc-kiralama-salihli" component={ServiceIndustrial} />
         <Route path="/guvenli-tasima-salihli" component={ServiceSafeTransport} />
@@ -54,6 +57,7 @@ function Router() {
         <Route path="/kula-vinc-kiralama" component={LocationKula} />
         <Route path="/demirci-vinc-kiralama" component={LocationDemirci} />
         <Route path="/koprubasi-sarigol-vinc-kiralama" component={LocationKoprubasiSarigol} />
+        <Route path="/ahmetli-vinc-kiralama" component={LocationAhmetli} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

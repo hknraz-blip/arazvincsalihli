@@ -19,6 +19,11 @@ const routeMeta: Record<string, { title: string; description: string; canonical:
     description: "Salihli'de 10–55 ton arası mobil vinç kiralama. Sertifikalı operatörler, 30 dakikada sahada, sigortalı taşıma. Ücretsiz teklif: 0544 451 33 41",
     canonical: "https://arazvincsalihli.com/mobil-vinc-kiralama-salihli",
   },
+  "/sepetli-vinc-kiralama-salihli": {
+    title: "Salihli Sepetli Vinç Kiralama | Yüksek İrtifa Platformu – Araz Vinç",
+    description: "Salihli, Alaşehir, Kula ve Ahmetli'de sepetli vinç ve platform kiralama. Dış cephe, tabela montajı, çatı tamiri, elektrik ve ağaç budama. Tel: 0544 451 33 41",
+    canonical: "https://arazvincsalihli.com/sepetli-vinc-kiralama-salihli",
+  },
   "/insaat-vinc-kiralama-salihli": {
     title: "İnşaat Vinç Kiralama Salihli & Alaşehir | Araz Vinç",
     description: "Salihli ve Alaşehir inşaat projelerinde prefabrik montaj, demir-beton taşıma, çelik iskelet kurulumu. Profesyonel vinç. Tel: 0544 451 33 41",
@@ -58,6 +63,11 @@ const routeMeta: Record<string, { title: string; description: string; canonical:
     title: "Köprübaşı & Sarıgöl Vinç Kiralama | Araz Vinç",
     description: "Köprübaşı ve Sarıgöl'de vinç kiralama hizmetleri. Salihli merkezli, hızlı ulaşım, 7/24 destek. Tel: 0544 451 33 41",
     canonical: "https://arazvincsalihli.com/koprubasi-sarigol-vinc-kiralama",
+  },
+  "/ahmetli-vinc-kiralama": {
+    title: "Ahmetli Vinç Kiralama | Hiab & Mobil Vinç | Araz Vinç – 7/24",
+    description: "Ahmetli'de profesyonel vinç kiralama hizmetleri. İnşaat, sanayi, tarım tesisleri ve acil araç kurtarma. 15 dakikada sahada. Tel: 0544 451 33 41",
+    canonical: "https://arazvincsalihli.com/ahmetli-vinc-kiralama",
   },
   "/blog": {
     title: "Vinç Kiralama Blog | Uzman Rehberleri | Araz Vinç Salihli",

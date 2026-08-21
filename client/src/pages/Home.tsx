@@ -1,14 +1,21 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, Instagram, Construction, Shield, Clock, Award, Truck, CheckCircle, Star, ArrowRight, ChevronDown, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { Phone, MapPin, Instagram, Construction, Shield, Clock, Award, Truck, CheckCircle, Star, ArrowRight, ChevronDown, X, ChevronLeft, ChevronRight, ZoomIn, Building } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
+import { useSEO } from "@/hooks/useSEO";
 
 // Google Ads dönüşüm takibi
 declare function gtagSendEvent(url: string): false;
 const trackCall = () => { if (typeof gtagSendEvent === 'function') gtagSendEvent('tel:05444513341'); };
 
 export default function Home() {
+  useSEO({
+    title: "Araz Vinç Salihli | Hiab & Mobil Vinç Kiralama – 7/24",
+    description: "Salihli, Alaşehir, Kula, Demirci, Köprübaşı, Sarıgöl ve Ahmetli'de 55 tonluk Hiab vinç, mobil vinç kiralama. 7/24 acil hizmet, sertifikalı operatörler. Tel: 0544 451 33 41",
+    canonical: "https://arazvincsalihli.com/",
+  });
+
   const { user, loading, error, isAuthenticated, logout } = useAuth();
   const [scrollY, setScrollY] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -93,10 +100,11 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-25 w-auto object-contain" />
             </div>
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-7">
               <button onClick={() => scrollToSection("anasayfa")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Ana Sayfa</button>
               <button onClick={() => scrollToSection("hizmetler")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Hizmetlerimiz</button>
               <button onClick={() => scrollToSection("calismalar")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Çalışmalarımız</button>
+              <button onClick={() => scrollToSection("bolgeler")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Bölgelerimiz</button>
               <button onClick={() => scrollToSection("hakkimizda")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Hakkımızda</button>
               <button onClick={() => scrollToSection("iletisim")} className="text-gray-700 hover:text-orange-600 transition-colors font-medium">İletişim</button>
               <a href="/blog" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">Blog</a>
@@ -183,22 +191,30 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Truck,        title: "Mobil Vinç Kiralama",      desc: "Farklı tonajlarda mobil vinç kiralama hizmetleri ile her türlü yükleme ve indirme işlemlerinizi güvenle gerçekleştirin." },
-              { icon: Shield,       title: "Güvenli Taşıma",            desc: "Deneyimli operatörlerimiz ve modern ekipmanlarımızla yüklerinizi en güvenli şekilde taşıyoruz." },
-              { icon: Clock,        title: "7/24 Hizmet",               desc: "Acil durumlarınızda yanınızdayız. Hafta sonu ve tatil günleri dahil kesintisiz hizmet sunuyoruz." },
-              { icon: Award,        title: "Uzman Ekip",                desc: "Sertifikalı ve deneyimli operatörlerimiz ile işlerinizi profesyonel bir şekilde tamamlıyoruz." },
-              { icon: Construction, title: "İnşaat Projeleri",          desc: "İnşaat sahalarında malzeme taşıma, montaj ve demontaj işlemleriniz için özel çözümler sunuyoruz." },
-              { icon: Truck,        title: "Sanayi Taşımacılığı",       desc: "Ağır sanayi ekipmanlarının taşınması ve yerleştirilmesi için profesyonel vinç hizmetleri." },
+              { icon: Truck,        title: "Mobil Vinç Kiralama",      desc: "10 tondan 55 tona kadar farklı kapasitelerde mobil vinç kiralama. Yükleme, indirme ve hassas montaj.", href: "/mobil-vinc-kiralama-salihli" },
+              { icon: Building,     title: "Sepetli Vinç Kiralama",     desc: "Dış cephe, cam silme, tabela montajı, çatı tamiri ve ağaç budama için güvenli platform vinç.", href: "/sepetli-vinc-kiralama-salihli" },
+              { icon: Construction, title: "İnşaat Projeleri",          desc: "İnşaat sahalarında prefabrik montaj, demir-beton taşıma ve çelik konstrüksiyon çözümleri.", href: "/insaat-vinc-kiralama-salihli" },
+              { icon: Truck,        title: "Sanayi Taşımacılığı",       desc: "OSB ve fabrikalarda ağır sanayi makineleri, trafo ve tesis ekipmanlarının nakliyesi.", href: "/sanayi-vinc-kiralama-salihli" },
+              { icon: Shield,       title: "Güvenli Taşıma",            desc: "Deneyimli operatörler ve tam kapsamlı sigorta güvencesiyle sıfır riskli yük taşıma.", href: "/guvenli-tasima-salihli" },
+              { icon: Clock,        title: "7/24 Acil Hizmet",          desc: "Gece gündüz, hafta sonu kesintisiz vinç desteği ve karayolu acil kurtarma operasyonları.", href: "/acil-vinc-hizmeti-salihli" },
             ].map((s, idx) => (
-              <Card key={idx} className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 h-full">
-                <CardContent className="p-8">
-                  <div className="h-14 w-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center mb-6">
-                    <s.icon className="h-7 w-7 text-orange-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{s.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{s.desc}</p>
-                </CardContent>
-              </Card>
+              <a key={idx} href={s.href} className="group block h-full">
+                <Card className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 h-full flex flex-col justify-between group-hover:ring-2 group-hover:ring-orange-500/30">
+                  <CardContent className="p-8 flex flex-col h-full justify-between">
+                    <div>
+                      <div className="h-14 w-14 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <s.icon className="h-7 w-7 text-orange-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">{s.title}</h3>
+                      <p className="text-gray-600 leading-relaxed text-sm mb-6">{s.desc}</p>
+                    </div>
+                    <div className="inline-flex items-center text-orange-600 font-semibold text-sm group-hover:translate-x-1 transition-transform pt-2 border-t border-gray-100">
+                      <span>Detaylı Bilgi</span>
+                      <ArrowRight className="h-4 w-4 ml-1.5" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
             ))}
           </div>
         </div>
@@ -368,12 +384,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Hizmet Bölgelerimiz */}
+      <section id="bolgeler" className="py-24 bg-slate-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4 px-4 py-2 bg-orange-500/20 border border-orange-500/40 rounded-full">
+              <span className="text-orange-300 text-sm font-semibold">Hizmet Ağımız</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Hizmet Verdiğimiz İlçeler</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Salihli merkezimizden çevre ilçelere ortalama 15–35 dakikada ulaşıyor, 7/24 kesintisiz vinç ve ağır yük taşıma hizmeti sunuyoruz.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { title: "Salihli Vinç Kiralama", loc: "Merkez Üs · Anında Çıkış", time: "0-10 Dk", desc: "Tüm mahalleler, sanayi sitesi ve Salihli OSB'de 7/24 kesintisiz hizmet.", href: "/" },
+              { title: "Ahmetli Vinç Kiralama", loc: "Ahmetli & D300 Hattı", time: "~15 Dk", desc: "Tarımsal tesisler, inşaat projeleri, fabrika ve karayolu acil kurtarma.", href: "/ahmetli-vinc-kiralama" },
+              { title: "Alaşehir Vinç Kiralama", loc: "Alaşehir & Sanayi", time: "~30 Dk", desc: "Bağ tesisleri, gıda fabrikaları, makine montajı ve konut inşaatları.", href: "/alasehir-vinc-kiralama" },
+              { title: "Sarıgöl Vinç Kiralama", loc: "Sarıgöl & Köyler", time: "~25 Dk", desc: "Tarımsal depolar, prefabrik montaj ve yük indirme-bindirme hizmetleri.", href: "/koprubasi-sarigol-vinc-kiralama" },
+              { title: "Kula Vinç Kiralama", loc: "Kula & OSB Bölgesi", time: "~35 Dk", desc: "İnşaat, sanayi taşımacılığı, trafo montajı ve ağır vasıta yol yardım.", href: "/kula-vinc-kiralama" },
+              { title: "Demirci Vinç Kiralama", loc: "Demirci & Dağ Hattı", time: "~60 Dk", desc: "Ağır yük nakliyesi, makine montajı ve zorlu arazi şartlarında kurtarma.", href: "/demirci-vinc-kiralama" },
+            ].map((region, idx) => (
+              <a key={idx} href={region.href} className="group block bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-orange-500/60 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-5 w-5 text-orange-400 group-hover:scale-110 transition-transform" />
+                    <span className="text-xs font-semibold text-orange-300 bg-orange-950/60 px-2.5 py-1 rounded-full border border-orange-800/50">{region.loc}</span>
+                  </div>
+                  <span className="text-xs font-bold bg-slate-700 text-gray-200 px-2.5 py-1 rounded-md">{region.time}</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">{region.title}</h3>
+                <p className="text-gray-400 text-sm mb-4 leading-relaxed">{region.desc}</p>
+                <div className="inline-flex items-center text-orange-400 font-medium text-sm group-hover:translate-x-1 transition-transform">
+                  <span>İlçe Sayfasını İncele</span>
+                  <ArrowRight className="h-4 w-4 ml-1" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="iletisim" className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">İletişim</h2>
-            <p className="text-lg text-gray-600">Vinç kiralama hizmetlerimiz hakkında bilgi almak için bizimle iletişime geçin</p>
+            <p className="text-lg text-gray-600">Vinç kiralama hizmetlerimiz hakkında bilgi ve anında fiyat teklifi almak için bizimle iletişime geçin</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
             <Card className="text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0">
@@ -410,31 +467,73 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-950 text-white pt-16 pb-12 border-t border-gray-800">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            {/* Sütun 1: Marka & Açıklama */}
             <div>
-              <div className="flex items-center gap-3 mb-4"><img src="/araz-vinc-logo.png" alt="Araz Vinç" className="h-16 w-auto object-contain" /></div>
-              <p className="text-gray-400">Profesyonel vinç kiralama hizmetleri</p>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/araz-vinc-logo.png" alt="Araz Vinç Salihli" className="h-16 w-auto object-contain" />
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                Salihli merkezli 55 tonluk Hiab ve mobil vinç filomuzla Manisa ve çevre ilçelerde 7/24 güvenli, sigortalı ağır yük kaldırma, makine montajı ve acil kurtarma hizmeti sunuyoruz.
+              </p>
+              <div className="flex items-center gap-3 text-orange-500">
+                <a href="https://instagram.com/arazvincsalihli" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-gray-900 hover:bg-orange-600 hover:text-white rounded-xl transition-colors" aria-label="Instagram">
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a href="tel:05444513341" onClick={trackCall} className="p-2.5 bg-gray-900 hover:bg-orange-600 hover:text-white rounded-xl transition-colors" aria-label="Telefon">
+                  <Phone className="h-5 w-5" />
+                </a>
+              </div>
             </div>
+
+            {/* Sütun 2: Hizmetlerimiz */}
             <div>
-              <h4 className="font-bold mb-4 text-white">Hızlı Linkler</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><button onClick={() => scrollToSection("hizmetler")} className="hover:text-orange-400 transition-colors">Hizmetlerimiz</button></li>
-                <li><button onClick={() => scrollToSection("calismalar")} className="hover:text-orange-400 transition-colors">Çalışmalarımız</button></li>
-                <li><button onClick={() => scrollToSection("hakkimizda")} className="hover:text-orange-400 transition-colors">Hakkımızda</button></li>
-                <li><button onClick={() => scrollToSection("iletisim")} className="hover:text-orange-400 transition-colors">İletişim</button></li>
-                <li><a href="/blog" className="hover:text-orange-400 transition-colors">Blog</a></li>
+              <h4 className="font-bold text-white text-base mb-4 tracking-wide uppercase text-xs text-orange-400">Hizmetlerimiz</h4>
+              <ul className="space-y-2.5 text-sm text-gray-400">
+                <li><a href="/mobil-vinc-kiralama-salihli" className="hover:text-orange-400 transition-colors">Mobil Vinç Kiralama</a></li>
+                <li><a href="/sepetli-vinc-kiralama-salihli" className="hover:text-orange-400 transition-colors font-medium text-gray-300">Sepetli Vinç Kiralama</a></li>
+                <li><a href="/insaat-vinc-kiralama-salihli" className="hover:text-orange-400 transition-colors">İnşaat Vinç Kiralama</a></li>
+                <li><a href="/sanayi-vinc-kiralama-salihli" className="hover:text-orange-400 transition-colors">Sanayi Taşımacılığı</a></li>
+                <li><a href="/guvenli-tasima-salihli" className="hover:text-orange-400 transition-colors">Güvenli Yük Taşıma</a></li>
+                <li><a href="/acil-vinc-hizmeti-salihli" className="hover:text-orange-400 transition-colors">7/24 Acil Vinç Hizmeti</a></li>
               </ul>
             </div>
+
+            {/* Sütun 3: Hizmet Bölgelerimiz */}
             <div>
-              <h4 className="font-bold mb-4 text-white">İletişim</h4>
-              <p className="text-gray-400 mb-2">Telefon: 0544 451 33 41</p>
-              <p className="text-gray-400">Salihli / Manisa</p>
+              <h4 className="font-bold text-white text-base mb-4 tracking-wide uppercase text-xs text-orange-400">Hizmet Bölgelerimiz</h4>
+              <ul className="space-y-2.5 text-sm text-gray-400">
+                <li><a href="/" className="hover:text-orange-400 transition-colors font-medium text-gray-300">Salihli Vinç (Merkez)</a></li>
+                <li><a href="/ahmetli-vinc-kiralama" className="hover:text-orange-400 transition-colors">Ahmetli Vinç Kiralama</a></li>
+                <li><a href="/alasehir-vinc-kiralama" className="hover:text-orange-400 transition-colors">Alaşehir Vinç Kiralama</a></li>
+                <li><a href="/kula-vinc-kiralama" className="hover:text-orange-400 transition-colors">Kula Vinç Kiralama</a></li>
+                <li><a href="/demirci-vinc-kiralama" className="hover:text-orange-400 transition-colors">Demirci Vinç Kiralama</a></li>
+                <li><a href="/koprubasi-sarigol-vinc-kiralama" className="hover:text-orange-400 transition-colors">Köprübaşı & Sarıgöl Vinç</a></li>
+              </ul>
+            </div>
+
+            {/* Sütun 4: İletişim */}
+            <div>
+              <h4 className="font-bold text-white text-base mb-4 tracking-wide uppercase text-xs text-orange-400">İletişim & Konum</h4>
+              <p className="text-gray-300 font-semibold mb-1">Araz Vinç Salihli</p>
+              <p className="text-gray-400 text-sm mb-3">Abay Bulvarı No: 72<br />Salihli / Manisa</p>
+              <a href="tel:05444513341" onClick={trackCall} className="inline-block text-orange-400 font-bold text-lg hover:text-orange-300 transition-colors mb-3">
+                0544 451 33 41
+              </a>
+              <p className="text-xs text-gray-500">7/24 Kesintisiz Çağrı & Acil Yol Yardım</p>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>© 2025 Araz Vinç. Tüm hakları saklıdır.</p>
+
+          <div className="border-t border-gray-800/80 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+            <p>© {new Date().getFullYear()} Araz Vinç Salihli. Tüm hakları saklıdır.</p>
+            <div className="flex gap-6">
+              <a href="/" className="hover:text-orange-400 transition-colors">Ana Sayfa</a>
+              <a href="/blog" className="hover:text-orange-400 transition-colors">Blog & Rehberler</a>
+              <a href="#hizmetler" onClick={() => scrollToSection("hizmetler")} className="hover:text-orange-400 transition-colors">Hizmetlerimiz</a>
+              <a href="#iletisim" onClick={() => scrollToSection("iletisim")} className="hover:text-orange-400 transition-colors">İletişim</a>
+            </div>
           </div>
         </div>
       </footer>

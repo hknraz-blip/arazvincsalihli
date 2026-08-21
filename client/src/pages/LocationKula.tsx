@@ -100,12 +100,13 @@ export default function LocationKula() {
       <section className="py-14 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Komşu İlçelerde de Hizmet Veriyoruz</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {[
               { href: "/", t: "Salihli" },
               { href: "/alasehir-vinc-kiralama", t: "Alaşehir" },
               { href: "/demirci-vinc-kiralama", t: "Demirci" },
-              { href: "/koprubaşı-sarigol-vinc-kiralama", t: "Köprübaşı & Sarıgöl" },
+              { href: "/koprubasi-sarigol-vinc-kiralama", t: "Köprübaşı & Sarıgöl" },
+              { href: "/ahmetli-vinc-kiralama", t: "Ahmetli" },
             ].map(({ href, t }) => (
               <a key={t} href={href} className="block p-4 border border-gray-200 rounded-xl hover:border-orange-400 hover:bg-orange-50 transition-all text-center font-medium text-gray-700 hover:text-orange-700">{t} →</a>
             ))}

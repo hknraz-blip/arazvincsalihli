@@ -7,6 +7,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 // Google Ads dönüşüm fonksiyonu için global tip tanımı
 declare function gtagSendEvent(url: string): false;
+declare function gtag(...args: any[]): void;
 
 export default function QuoteForm() {
   const [formData, setFormData] = useState({

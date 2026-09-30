@@ -32,23 +32,23 @@ export default function Home() {
     { src: "/galeri/beton-kosk-montaj-2.webp",         title: "Beton Köşk Yerleştirme",         category: "Sanayi",       desc: "Beton köşk montaj operasyonunun tamamlanması" },
     { src: "/galeri/beton-kosk-montaj-3.webp",         title: "Beton Köşk İndirme",             category: "Sanayi",       desc: "Büyük beton köşkün araçtan indirilme işlemi" },
     { src: "/galeri/beton-kosk-indirme.webp",          title: "Köşk İndirme Operasyonu",        category: "Sanayi",       desc: "Hiab vinç ile beton köşk indirme ve konumlama" },
-    { src: "/galeri/beton-mikser-kurtarma-1.webp",     title: "Beton Mikseri Kurtarma",         category: "Kurtarma",     desc: "Tünel inşaatında mahsur kalan beton mikserinin kurtarılması" },
-    { src: "/galeri/beton-mikser-kurtarma-2.webp",     title: "Mikser Çekme Operasyonu",        category: "Kurtarma",     desc: "Vinç yardımıyla beton mikserinin güvenli alana çekilmesi" },
+    { src: "/galeri/prefabrik-beton-kosk.webp",        title: "Prefabrik Beton Köşk Taşıma",    category: "Sanayi",       desc: "Prefabrik trafo ve kabin bloklarının vinçle sahaya yerleşimi" },
+    { src: "/galeri/enjeksiyon-makinasi-indirme.webp", title: "Enjeksiyon Makinesi İndirme",    category: "Sanayi",       desc: "OSB fabrikasında ağır sanayi enjeksiyon makinesinin indirilmesi" },
+    { src: "/galeri/tunel-makina-montaji-1.webp",      title: "Tünel Makine Montajı",           category: "Sanayi",       desc: "Tünel ve altyapı projelerinde ağır iş makinesi montajı" },
+    { src: "/galeri/tunel-makina-montaji-2.webp",      title: "Tünel Ekipman Yerleşimi",        category: "Sanayi",       desc: "Dar alanda hassas hidrolik vinç ile makine montaj operasyonu" },
+    { src: "/galeri/foseptik-deposu-1.webp",           title: "Altyapı Deposu İndirme",         category: "Taşıma",       desc: "Büyük hacimli altyapı tankının araziye indirilmesi" },
+    { src: "/galeri/foseptik-deposu-2.webp",           title: "Depo Konumlama Operasyonu",      category: "Taşıma",       desc: "Hassas vinç kontrolü ile altyapı deposunun montajı" },
     { src: "/galeri/damperli-kamyon-kurtarma-1.webp",  title: "Damperli Kamyon Kurtarma",       category: "Kurtarma",     desc: "Devrilen damperli kamyonun vinçle kaldırılması" },
     { src: "/galeri/damperli-kamyon-kurtarma-2.webp",  title: "Kamyon Doğrultma",               category: "Kurtarma",     desc: "Ağır vasıta kamyonun yola oturtulması operasyonu" },
-    { src: "/galeri/damperli-kamyon-kurtarma-3.webp",  title: "Kamyon Çekme",                   category: "Kurtarma",     desc: "Kurtarılan kamyonun güvenli bölgeye taşınması" },
-    { src: "/galeri/dorse-kurtarma-1.webp",            title: "Dorse Kurtarma",                 category: "Kurtarma",     desc: "Kaza yapan dorse ve tırın vinçle kurtarılması" },
-    { src: "/galeri/dorse-kurtarma-2.webp",            title: "Dorse Kaldırma",                 category: "Kurtarma",     desc: "Şarampole devrilen dorsenin yola çıkarılması" },
-    { src: "/galeri/grayder-kurtarma-1.webp",          title: "Grayder Kurtarma",               category: "Kurtarma",     desc: "Arazide batan iş makinesinin vinçle kurtarılması" },
-    { src: "/galeri/insaat-vinc-operasyon-1.webp",     title: "İnşaat Malzemesi Taşıma",        category: "İnşaat",       desc: "İnşaat sahasında paletli malzeme ve ekipman kaldırma" },
-    { src: "/galeri/insaat-vinc-operasyon-2.webp",     title: "Şantiye Vinç Hizmeti",           category: "İnşaat",       desc: "Yüksek katlı inşaata malzeme aktarımı" },
-    { src: "/galeri/insaat-vinc-operasyon-3.webp",     title: "Çelik Konstrüksiyon Montajı",    category: "İnşaat",       desc: "Çelik çatı ve kolon parçalarının montajı" },
-    { src: "/galeri/insaat-vinc-operasyon-4.webp",     title: "Prefabrik Eleman Montajı",       category: "İnşaat",       desc: "Prefabrik beton blokların yerleştirilmesi" },
-    { src: "/galeri/konteyner-tasima.webp",            title: "Konteyner İndirme & Taşıma",     category: "Taşıma",       desc: "Şantiye konteynerinin araca yüklenmesi ve nakliyesi" },
-    { src: "/galeri/kuyu-sondaj-ekipman-indirme.webp", title: "Sondaj Ekipmanı İndirme",        category: "Sanayi",       desc: "Derin kuyu sondaj borularının ve motorunun montajı" },
-    { src: "/galeri/sanayi-boru-indirme-1.webp",       title: "Sanayi Borusu İndirme",          category: "Sanayi",       desc: "Büyük çaplı çelik sanayi borularının indirilmesi" },
-    { src: "/galeri/sanayi-boru-indirme-2.webp",       title: "Boru Montaj Operasyonu",         category: "Sanayi",       desc: "Fabrika hattı için boruların hassas yerleşimi" },
-    { src: "/galeri/trafo-indirme.webp",               title: "Elektrik Trafosu İndirme",       category: "Sanayi",       desc: "Yüksek gerilim trafosunun kaideye oturtulması" },
+    { src: "/galeri/tunel-beton-mikseri-1.webp",       title: "Beton Mikseri Kurtarma",         category: "Kurtarma",     desc: "Tünel inşaatında mahsur kalan beton mikserinin kurtarılması" },
+    { src: "/galeri/tunel-beton-mikseri-2.webp",       title: "Mikser Çekme Operasyonu",        category: "Kurtarma",     desc: "Vinç yardımıyla beton mikserinin güvenli alana çekilmesi" },
+    { src: "/galeri/dorse-kurtarma.webp",              title: "Dorse & Tır Kurtarma",           category: "Kurtarma",     desc: "Kaza yapan dorse ve tırın vinçle kurtarılması" },
+    { src: "/galeri/grayder-kurtarma-1.webp",          title: "İş Makinesi Kurtarma",           category: "Kurtarma",     desc: "Arazide batan grayder ve iş makinesinin vinçle kurtarılması" },
+    { src: "/galeri/grayder-kurtarma-2.webp",          title: "Grayder Çekme Operasyonu",       category: "Kurtarma",     desc: "Zorlu arazi koşullarında iş makinesinin güvenli bölgeye tahliyesi" },
+    { src: "/galeri/celik-konstruksiyon-1.webp",       title: "Çelik Konstrüksiyon Montajı",    category: "İnşaat",       desc: "Fabrika inşaatında yüksek çelik kolon parçalarının montajı" },
+    { src: "/galeri/celik-konstruksiyon-2.webp",       title: "Çelik Çatı Kiriş Montajı",       category: "İnşaat",       desc: "Geniş açıklıklı çelik çatı kirişlerinin vinçle kaldırılması" },
+    { src: "/galeri/cati-malzemesi-cikarma-1.webp",    title: "Yüksek Bina Çatı Malzemesi",     category: "İnşaat",       desc: "Yüksek katlı plazanın çatısına paletli malzeme çıkarma" },
+    { src: "/galeri/cati-malzemesi-cikarma-2.webp",    title: "Çatı İzolasyon Malzemesi Taşıma",category: "İnşaat",       desc: "Vinç ile binanın en üst katına inşaat ve çatı malzemesi sevkıyatı" },
   ];
 
   const categories = ["Tümü", "Sanayi", "Kurtarma", "İnşaat", "Taşıma"];
@@ -417,7 +417,19 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item, idx) => (
               <div key={idx} className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer aspect-[4/3]" onClick={() => openLightbox(idx)}>
-                <img src={item.src} alt={item.title} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src.endsWith('.webp')) {
+                      target.src = target.src.replace('.webp', '.jpg');
+                    }
+                  }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="flex items-start justify-between">
@@ -455,7 +467,17 @@ export default function Home() {
           <button className="absolute left-5 bg-white/10 hover:bg-white/25 backdrop-blur-sm rounded-full p-3 text-white transition-all z-10" onClick={e => { e.stopPropagation(); prevImage(); }}><ChevronLeft className="h-6 w-6" /></button>
           <button className="absolute right-5 bg-white/10 hover:bg-white/25 backdrop-blur-sm rounded-full p-3 text-white transition-all z-10" onClick={e => { e.stopPropagation(); nextImage(); }}><ChevronRight className="h-6 w-6" /></button>
           <div className="relative max-w-5xl max-h-[85vh] mx-16 flex flex-col items-center" onClick={e => e.stopPropagation()}>
-            <img src={filteredItems[lightboxIndex].src} alt={filteredItems[lightboxIndex].title} className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl" />
+            <img
+              src={filteredItems[lightboxIndex].src}
+              alt={filteredItems[lightboxIndex].title}
+              className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (target.src.endsWith('.webp')) {
+                  target.src = target.src.replace('.webp', '.jpg');
+                }
+              }}
+            />
             <div className="mt-4 text-center">
               <span className="inline-block px-3 py-1 bg-orange-600 text-white text-xs font-semibold rounded-full mb-2">{filteredItems[lightboxIndex].category}</span>
               <h3 className="text-white font-bold text-xl">{filteredItems[lightboxIndex].title}</h3>

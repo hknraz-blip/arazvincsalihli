@@ -4,10 +4,10 @@ export const APP_TITLE = "Araz Vinç Salihli";
 export const APP_LOGO = "/araz-vinc-logo.png";
 
 export const getLoginUrl = () => {
-  const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
-  const appId = import.meta.env.VITE_APP_ID;
-  const redirectUri = `${window.location.origin}`;
-  const state = btoa(redirectUri);
+  const oauthPortalUrl = typeof import.meta !== "undefined" && import.meta.env ? import.meta.env.VITE_OAUTH_PORTAL_URL : undefined;
+  const appId = typeof import.meta !== "undefined" && import.meta.env ? import.meta.env.VITE_APP_ID : undefined;
+  const redirectUri = typeof window !== "undefined" ? window.location.origin : "";
+  const state = typeof btoa !== "undefined" ? btoa(redirectUri) : "";
 
   // Ortam değişkenleri yoksa login URL’i hiç üretme, ana sayfaya yönlendir:
   if (!oauthPortalUrl || !appId) {

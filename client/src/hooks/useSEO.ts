@@ -8,6 +8,10 @@ type SEOProps = {
 };
 
 export function useSEO({ title, description, canonical, ogImage }: SEOProps) {
+  if (typeof globalThis !== "undefined" && (globalThis as any).__SEO_METADATA_STORE__) {
+    (globalThis as any).__SEO_METADATA_STORE__ = { title, description, canonical, ogImage };
+  }
+
   useEffect(() => {
     // Title
     document.title = title;

@@ -6,6 +6,18 @@ import { useSEO } from "@/hooks/useSEO";
 
 const posts = [
   {
+    slug: "mobil-vinc-nedir",
+    title: "Mobil Vinç Nedir? Ne Zaman Kullanılır?",
+    excerpt: "Mobil vinçlerin özellikleri, kullanım alanları ve Salihli bölgesinde ne zaman tercih edilmesi gerektiği hakkında rehber.",
+    date: "31 Ekim 2026",
+  },
+  {
+    slug: "acil-vinc-hizmeti-7-24",
+    title: "Salihli’de Acil Vinç Hizmeti: 7/24 Ne Zaman Aranmalı?",
+    excerpt: "Kaza, arıza veya acil montaj durumlarında Salihli ve Manisa’da 7/24 vinç hizmeti nasıl çalışır?",
+    date: "31 Ekim 2026",
+  },
+  {
     slug: "sepetli-vinc-mi-iskele-mi",
     title: "Dış Cephe ve Yüksek İrtifada Sepetli Vinç mi, İskele mi? (Maliyet ve Güvenlik)",
     excerpt: "Bina dış cephe boyası, cam temizliği, tabela montajı ve çatı tamirinde sepetli vinç ile iskele maliyet, süre ve güvenlik karşılaştırması.",
